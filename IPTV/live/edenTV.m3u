@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://valleyfiber.ca/wp-content/themes/valleyfiber/images/logo-white.svg" group-title="EdenTV", EdenTV-Fireplace
+http://192.168.20.148/live/fireplace/fireplace-logo.mp4
+
+#EXTINF:-1 tvg-logo="https://valleyfiber.ca/wp-content/themes/valleyfiber/images/logo-white.svg" group-title="VF TV", 102_Winkler_HD
+http://10.200.200.133/bpk-tv/102_Winkler_HD/output/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://dashradio-files.s3.amazonaws.com/development/icon_logos/229/logos/ec3bfac0-18e4-488b-b2f5-42451fb589e6.png" group-title="Free Dash Radio" radio="true",Dash Radio | Smooth Jazz Hits
+https://ice55.securenetsystems.net/DASH44
+
+#EXTINF:-1 tvg-id="NTVCam" tvg-logo="https://od.lk/s/MF8yMzQzMDExODVf/NTV-CA_400x400.png" group-title="Canada",NTV harbour cam
+https://2-fss-2.streamhoster.com/pl_126/201748-1529822-1/playlist.m3u8

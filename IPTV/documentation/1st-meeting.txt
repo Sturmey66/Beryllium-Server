@@ -1,0 +1,62 @@
+https://ehcsprep-my.sharepoint.com/:fl:/g/personal/john_funk_edenhealthcare_ca/EV6qkimGh25Dj7dfdugkctYB2y5FVA8IVbWJjGAv_K3FnQ?nav=cz0lMkZwZXJzb25hbCUyRmpvaG5fZnVua19lZGVuaGVhbHRoY2FyZV9jYSZkPWIhVmhFVWJNOEN3a200WmFpUVFBR3hWaWdXcWo1cHlVcExocGxIQ3lNMXNHMVA5SXpDYzNEZFFheHJiQjJTS012ayZmPTAxNlJGVElNSzZWS0pDVEJVSE5aQlk3TjI3TzNVQ0k0V1cmYz0lMkZkYjVmYTNiYS1iNmZlLTQzMjUtOTcwMC1kMjM1NWZhNjNiODQmZmx1aWQ9MSZwPSU0MG1zJTJGb25lbm90ZS1tZWV0aW5ncw%3D%3D
+
+Agenda
+greeting
+discuss wish list
+chase rabbits down holes
+
+Meeting notes
+generally leans towards tv for content distribution,
+setup a webserver and have content that shows or streams,
+can use PowerPoint to create video files that loop,
+can show live feeds from cameras,
+can add scrolling text as needed,
+can setup time slots as needed,
+software can be purchased - more geared towards live IPTV content,
+there are free open source options in addition to paid solutions,
+PowerPoint with timings pushed to video could be a good place to start,
+videos embedded in PowerPoint will work,
+Takes content and turns it into a TV channel <-- this can be private or public,
+we have different options for staff to create content,
+Dr.'s office - 15 minute loop,
+Fireplace - 3 or 4 hour loop if including songs,
+
+Content Created by Lori
+Lori creates content in Adobe InDesign
+Also uses PowerPoint to create videos,
+
+Thinking Ahead
+we'd like PD's to submit content,
+it would be good to have a template they can use to provide a consistent feel across the organization,
+would be nice to use this to recognize staff and achievements throughout the organization,
+Want to ensure that we start with brand consistency so that it's part of the process going forward,
+can be used in the movement towards white noise in most offices,
+have to be aware of the volume level in the environment when using audio,
+could have a fireplace channel if needed,
+weather channel for each location,
+
+Follow-up tasks
+
+			
+What else do we want on it?   <-- PD's and Communication Committee			
+Bring to communication committee and determine templates and guides that want to be used.  			
+
+
+setup Linux LA(m)P server. 
+-Debian, possibly Lubuntu server
+-Apache or NginX? Which is better for what we're doing?
+VM needs 4 cores, Should have at least 1TB storage. change pointer to new root folder /EdenTV/live/. 
+
+
+server setup
+share to live folder
+need FFMPEG and weather script
+can we add live camera for demo?
+fireplace channel
+each channel should have it's own folder name
+need all scripts and generating files in their own subsection of /EdenTV/
+
+
+EdenTV logo? do we want to brand the channels?
+
+

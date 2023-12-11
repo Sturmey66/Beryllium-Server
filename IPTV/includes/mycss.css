@@ -1,0 +1,43 @@
+/* This demo stylesheet ONLY styles the nav menu. */
+a {
+    color:#33348e;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+nav {
+    background-color:#33348e;
+    font-family:verdana,arial,times,serif;
+    font-size:.875em;
+    overflow:hidden;
+    padding-left:4%;
+}
+nav ul {
+    padding:0;
+    margin:0;
+}
+nav ul li {
+    list-style-type:none;
+    float:left;
+    position:relative;
+    padding:0;
+    margin:0;
+}
+nav ul li a {
+    display:block;
+    color:#fff;
+    padding:.875em .625em;
+    margin:0;
+}
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color:#fff;
+    color:#33348e;
+    text-decoration:none;
+    font-weight:normal;
+}
+/* These selectors style the active page's menu */
+#menu .menu a{
+    color:#33348e;
+    background-color:#fff;
+    pointer-events:none;
+}

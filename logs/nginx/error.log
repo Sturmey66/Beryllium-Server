@@ -1,0 +1,827 @@
+2023/12/05 16:30:25 [notice] 1#1: using the "epoll" event method
+2023/12/05 16:30:25 [notice] 1#1: nginx/1.25.3
+2023/12/05 16:30:25 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2023/12/05 16:30:25 [notice] 1#1: OS: Linux 5.15.133.1-microsoft-standard-WSL2
+2023/12/05 16:30:25 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/12/05 16:30:25 [notice] 1#1: start worker processes
+2023/12/05 16:30:25 [notice] 1#1: start worker process 29
+2023/12/05 16:30:25 [notice] 1#1: start worker process 30
+2023/12/05 16:30:25 [notice] 1#1: start worker process 31
+2023/12/05 16:30:25 [notice] 1#1: start worker process 32
+2023/12/05 16:30:25 [notice] 1#1: start worker process 33
+2023/12/05 16:30:25 [notice] 1#1: start worker process 34
+2023/12/05 16:30:25 [notice] 1#1: start worker process 35
+2023/12/05 16:30:25 [notice] 1#1: start worker process 36
+2023/12/05 16:30:25 [notice] 1#1: start worker process 37
+2023/12/05 16:30:25 [notice] 1#1: start worker process 38
+2023/12/05 16:30:25 [notice] 1#1: start worker process 39
+2023/12/05 16:30:25 [notice] 1#1: start worker process 40
+2023/12/05 16:30:25 [notice] 1#1: start worker process 41
+2023/12/05 16:30:25 [notice] 1#1: start worker process 42
+2023/12/05 16:30:25 [notice] 1#1: start worker process 43
+2023/12/05 16:30:25 [notice] 1#1: start worker process 44
+2023/12/05 16:31:32 [error] 29#29: *1 open() "/var/www/html/input.html" failed (2: No such file or directory), client: 172.19.0.1, server: , request: "GET /input.html HTTP/1.1", host: "localhost:8080"
+2023/12/05 16:31:35 [error] 29#29: *1 open() "/var/www/html/input.html" failed (2: No such file or directory), client: 172.19.0.1, server: , request: "GET /input.html HTTP/1.1", host: "localhost:8080"
+2023/12/05 16:31:50 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/12/05 16:31:50 [notice] 29#29: gracefully shutting down
+2023/12/05 16:31:50 [notice] 36#36: gracefully shutting down
+2023/12/05 16:31:50 [notice] 30#30: gracefully shutting down
+2023/12/05 16:31:50 [notice] 31#31: gracefully shutting down
+2023/12/05 16:31:50 [notice] 33#33: gracefully shutting down
+2023/12/05 16:31:50 [notice] 32#32: gracefully shutting down
+2023/12/05 16:31:50 [notice] 34#34: gracefully shutting down
+2023/12/05 16:31:50 [notice] 35#35: gracefully shutting down
+2023/12/05 16:31:50 [notice] 37#37: gracefully shutting down
+2023/12/05 16:31:50 [notice] 38#38: gracefully shutting down
+2023/12/05 16:31:50 [notice] 39#39: gracefully shutting down
+2023/12/05 16:31:50 [notice] 40#40: gracefully shutting down
+2023/12/05 16:31:50 [notice] 41#41: gracefully shutting down
+2023/12/05 16:31:50 [notice] 42#42: gracefully shutting down
+2023/12/05 16:31:50 [notice] 43#43: gracefully shutting down
+2023/12/05 16:31:50 [notice] 44#44: gracefully shutting down
+2023/12/05 16:31:50 [notice] 29#29: exiting
+2023/12/05 16:31:50 [notice] 36#36: exiting
+2023/12/05 16:31:50 [notice] 30#30: exiting
+2023/12/05 16:31:50 [notice] 31#31: exiting
+2023/12/05 16:31:50 [notice] 33#33: exiting
+2023/12/05 16:31:50 [notice] 32#32: exiting
+2023/12/05 16:31:50 [notice] 34#34: exiting
+2023/12/05 16:31:50 [notice] 35#35: exiting
+2023/12/05 16:31:50 [notice] 37#37: exiting
+2023/12/05 16:31:50 [notice] 38#38: exiting
+2023/12/05 16:31:50 [notice] 39#39: exiting
+2023/12/05 16:31:50 [notice] 40#40: exiting
+2023/12/05 16:31:50 [notice] 41#41: exiting
+2023/12/05 16:31:50 [notice] 42#42: exiting
+2023/12/05 16:31:50 [notice] 43#43: exiting
+2023/12/05 16:31:50 [notice] 44#44: exiting
+2023/12/05 16:31:50 [notice] 29#29: exit
+2023/12/05 16:31:50 [notice] 36#36: exit
+2023/12/05 16:31:50 [notice] 30#30: exit
+2023/12/05 16:31:50 [notice] 31#31: exit
+2023/12/05 16:31:50 [notice] 33#33: exit
+2023/12/05 16:31:50 [notice] 32#32: exit
+2023/12/05 16:31:50 [notice] 34#34: exit
+2023/12/05 16:31:50 [notice] 35#35: exit
+2023/12/05 16:31:50 [notice] 37#37: exit
+2023/12/05 16:31:50 [notice] 38#38: exit
+2023/12/05 16:31:50 [notice] 39#39: exit
+2023/12/05 16:31:50 [notice] 40#40: exit
+2023/12/05 16:31:50 [notice] 41#41: exit
+2023/12/05 16:31:50 [notice] 42#42: exit
+2023/12/05 16:31:50 [notice] 43#43: exit
+2023/12/05 16:31:50 [notice] 44#44: exit
+2023/12/05 16:31:50 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/12/05 16:31:50 [notice] 1#1: worker process 31 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: worker process 33 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: worker process 34 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: worker process 36 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: worker process 43 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 16:31:50 [notice] 1#1: signal 17 (SIGCHLD) received from 44
+2023/12/05 16:31:50 [notice] 1#1: worker process 30 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: worker process 32 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: worker process 39 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: worker process 40 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: worker process 42 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: worker process 44 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 16:31:50 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/12/05 16:31:50 [notice] 1#1: worker process 35 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 16:31:50 [notice] 1#1: signal 17 (SIGCHLD) received from 38
+2023/12/05 16:31:50 [notice] 1#1: worker process 29 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: worker process 38 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: worker process 41 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 16:31:50 [notice] 1#1: signal 17 (SIGCHLD) received from 41
+2023/12/05 16:31:50 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2023/12/05 16:31:50 [notice] 1#1: worker process 37 exited with code 0
+2023/12/05 16:31:50 [notice] 1#1: exit
+2023/12/05 16:32:18 [notice] 1#1: using the "epoll" event method
+2023/12/05 16:32:18 [notice] 1#1: nginx/1.25.3
+2023/12/05 16:32:18 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2023/12/05 16:32:18 [notice] 1#1: OS: Linux 5.15.133.1-microsoft-standard-WSL2
+2023/12/05 16:32:18 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/12/05 16:32:18 [notice] 1#1: start worker processes
+2023/12/05 16:32:18 [notice] 1#1: start worker process 29
+2023/12/05 16:32:18 [notice] 1#1: start worker process 30
+2023/12/05 16:32:18 [notice] 1#1: start worker process 31
+2023/12/05 16:32:18 [notice] 1#1: start worker process 32
+2023/12/05 16:32:18 [notice] 1#1: start worker process 33
+2023/12/05 16:32:18 [notice] 1#1: start worker process 34
+2023/12/05 16:32:18 [notice] 1#1: start worker process 35
+2023/12/05 16:32:18 [notice] 1#1: start worker process 36
+2023/12/05 16:32:18 [notice] 1#1: start worker process 37
+2023/12/05 16:32:18 [notice] 1#1: start worker process 38
+2023/12/05 16:32:18 [notice] 1#1: start worker process 39
+2023/12/05 16:32:18 [notice] 1#1: start worker process 40
+2023/12/05 16:32:18 [notice] 1#1: start worker process 41
+2023/12/05 16:32:18 [notice] 1#1: start worker process 42
+2023/12/05 16:32:18 [notice] 1#1: start worker process 43
+2023/12/05 16:32:18 [notice] 1#1: start worker process 44
+2023/12/05 16:32:24 [error] 29#29: *1 open() "/var/www/html/input.html" failed (2: No such file or directory), client: 172.19.0.1, server: , request: "GET /input.html HTTP/1.1", host: "localhost:8080"
+2023/12/05 16:32:26 [error] 29#29: *1 open() "/var/www/html/input.html" failed (2: No such file or directory), client: 172.19.0.1, server: , request: "GET /input.html HTTP/1.1", host: "localhost:8080"
+2023/12/05 16:33:22 [error] 30#30: *2 "/var/www/html/index.php" is not found (2: No such file or directory), client: 172.19.0.1, server: , request: "GET / HTTP/1.1", host: "localhost:8080"
+2023/12/05 16:33:44 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/12/05 16:33:44 [notice] 29#29: gracefully shutting down
+2023/12/05 16:33:44 [notice] 30#30: gracefully shutting down
+2023/12/05 16:33:44 [notice] 31#31: gracefully shutting down
+2023/12/05 16:33:44 [notice] 32#32: gracefully shutting down
+2023/12/05 16:33:44 [notice] 34#34: gracefully shutting down
+2023/12/05 16:33:44 [notice] 33#33: gracefully shutting down
+2023/12/05 16:33:44 [notice] 35#35: gracefully shutting down
+2023/12/05 16:33:44 [notice] 36#36: gracefully shutting down
+2023/12/05 16:33:44 [notice] 38#38: gracefully shutting down
+2023/12/05 16:33:44 [notice] 39#39: gracefully shutting down
+2023/12/05 16:33:44 [notice] 37#37: gracefully shutting down
+2023/12/05 16:33:44 [notice] 40#40: gracefully shutting down
+2023/12/05 16:33:44 [notice] 42#42: gracefully shutting down
+2023/12/05 16:33:44 [notice] 41#41: gracefully shutting down
+2023/12/05 16:33:44 [notice] 43#43: gracefully shutting down
+2023/12/05 16:33:44 [notice] 44#44: gracefully shutting down
+2023/12/05 16:33:44 [notice] 29#29: exiting
+2023/12/05 16:33:44 [notice] 30#30: exiting
+2023/12/05 16:33:44 [notice] 31#31: exiting
+2023/12/05 16:33:44 [notice] 32#32: exiting
+2023/12/05 16:33:44 [notice] 34#34: exiting
+2023/12/05 16:33:44 [notice] 33#33: exiting
+2023/12/05 16:33:44 [notice] 35#35: exiting
+2023/12/05 16:33:44 [notice] 36#36: exiting
+2023/12/05 16:33:44 [notice] 38#38: exiting
+2023/12/05 16:33:44 [notice] 39#39: exiting
+2023/12/05 16:33:44 [notice] 37#37: exiting
+2023/12/05 16:33:44 [notice] 40#40: exiting
+2023/12/05 16:33:44 [notice] 42#42: exiting
+2023/12/05 16:33:44 [notice] 41#41: exiting
+2023/12/05 16:33:44 [notice] 43#43: exiting
+2023/12/05 16:33:44 [notice] 44#44: exiting
+2023/12/05 16:33:44 [notice] 29#29: exit
+2023/12/05 16:33:44 [notice] 30#30: exit
+2023/12/05 16:33:44 [notice] 31#31: exit
+2023/12/05 16:33:44 [notice] 32#32: exit
+2023/12/05 16:33:44 [notice] 34#34: exit
+2023/12/05 16:33:44 [notice] 33#33: exit
+2023/12/05 16:33:44 [notice] 35#35: exit
+2023/12/05 16:33:44 [notice] 36#36: exit
+2023/12/05 16:33:44 [notice] 38#38: exit
+2023/12/05 16:33:44 [notice] 39#39: exit
+2023/12/05 16:33:44 [notice] 37#37: exit
+2023/12/05 16:33:44 [notice] 40#40: exit
+2023/12/05 16:33:44 [notice] 42#42: exit
+2023/12/05 16:33:44 [notice] 41#41: exit
+2023/12/05 16:33:44 [notice] 43#43: exit
+2023/12/05 16:33:44 [notice] 44#44: exit
+2023/12/05 16:33:44 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/12/05 16:33:44 [notice] 1#1: worker process 29 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: worker process 35 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 16:33:44 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/12/05 16:33:44 [notice] 1#1: worker process 30 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: worker process 32 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: worker process 34 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: worker process 36 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: worker process 39 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: worker process 43 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 16:33:44 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2023/12/05 16:33:44 [notice] 1#1: worker process 31 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: worker process 40 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 16:33:44 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2023/12/05 16:33:44 [notice] 1#1: worker process 33 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: worker process 37 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 16:33:44 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/12/05 16:33:44 [notice] 1#1: signal 17 (SIGCHLD) received from 42
+2023/12/05 16:33:44 [notice] 1#1: worker process 38 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: worker process 41 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: worker process 42 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: worker process 44 exited with code 0
+2023/12/05 16:33:44 [notice] 1#1: exit
+2023/12/05 16:34:28 [notice] 1#1: using the "epoll" event method
+2023/12/05 16:34:28 [notice] 1#1: nginx/1.25.3
+2023/12/05 16:34:28 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2023/12/05 16:34:28 [notice] 1#1: OS: Linux 5.15.133.1-microsoft-standard-WSL2
+2023/12/05 16:34:28 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/12/05 16:34:28 [notice] 1#1: start worker processes
+2023/12/05 16:34:28 [notice] 1#1: start worker process 29
+2023/12/05 16:34:28 [notice] 1#1: start worker process 30
+2023/12/05 16:34:28 [notice] 1#1: start worker process 31
+2023/12/05 16:34:28 [notice] 1#1: start worker process 32
+2023/12/05 16:34:28 [notice] 1#1: start worker process 33
+2023/12/05 16:34:28 [notice] 1#1: start worker process 34
+2023/12/05 16:34:28 [notice] 1#1: start worker process 35
+2023/12/05 16:34:28 [notice] 1#1: start worker process 36
+2023/12/05 16:34:28 [notice] 1#1: start worker process 37
+2023/12/05 16:34:28 [notice] 1#1: start worker process 38
+2023/12/05 16:34:28 [notice] 1#1: start worker process 39
+2023/12/05 16:34:28 [notice] 1#1: start worker process 40
+2023/12/05 16:34:28 [notice] 1#1: start worker process 41
+2023/12/05 16:34:28 [notice] 1#1: start worker process 42
+2023/12/05 16:34:28 [notice] 1#1: start worker process 43
+2023/12/05 16:34:28 [notice] 1#1: start worker process 44
+2023/12/05 20:19:03 [warn] 37#37: *30 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.19.0.1, server: , request: "POST /includes/upload.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 20:21:19 [warn] 38#38: *33 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000002, client: 172.19.0.1, server: , request: "POST /includes/upload.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 20:24:46 [warn] 40#40: *37 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000003, client: 172.19.0.1, server: , request: "POST /includes/upload.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 20:25:25 [warn] 40#40: *37 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000004, client: 172.19.0.1, server: , request: "POST /includes/upload.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 20:52:49 [warn] 43#43: *48 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000005, client: 172.19.0.1, server: , request: "POST /includes/upload.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 20:53:37 [warn] 43#43: *48 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000006, client: 172.19.0.1, server: , request: "POST /includes/upload.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 20:54:38 [warn] 43#43: *48 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000007, client: 172.19.0.1, server: , request: "POST /includes/upload.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 20:54:57 [warn] 43#43: *48 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000008, client: 172.19.0.1, server: , request: "POST /includes/upload.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:00:46 [warn] 44#44: *59 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000009, client: 172.19.0.1, server: , request: "POST /includes/upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:02:05 [warn] 29#29: *62 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000010, client: 172.19.0.1, server: , request: "POST /includes/upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:02:08 [warn] 29#29: *62 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000011, client: 172.19.0.1, server: , request: "POST /includes/upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:02:32 [error] 29#29: *62 open() "/IPTV/favicon.ico" failed (2: No such file or directory), client: 172.19.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:02:37 [warn] 29#29: *62 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000012, client: 172.19.0.1, server: , request: "POST /includes/upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:03:40 [warn] 29#29: *62 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000013, client: 172.19.0.1, server: , request: "POST /includes/upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:13:16 [warn] 29#29: *72 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000014, client: 172.19.0.1, server: , request: "POST /includes/upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:13:56 [warn] 29#29: *72 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000015, client: 172.19.0.1, server: , request: "POST /includes/upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:15:15 [warn] 29#29: *79 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000016, client: 172.19.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:16:57 [warn] 29#29: *84 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000017, client: 172.19.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:17:13 [warn] 29#29: *84 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000018, client: 172.19.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:18:24 [warn] 29#29: *84 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000019, client: 172.19.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:29:45 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/12/05 21:29:45 [notice] 29#29: gracefully shutting down
+2023/12/05 21:29:45 [notice] 44#44: gracefully shutting down
+2023/12/05 21:29:45 [notice] 30#30: gracefully shutting down
+2023/12/05 21:29:45 [notice] 31#31: gracefully shutting down
+2023/12/05 21:29:45 [notice] 32#32: gracefully shutting down
+2023/12/05 21:29:45 [notice] 33#33: gracefully shutting down
+2023/12/05 21:29:45 [notice] 34#34: gracefully shutting down
+2023/12/05 21:29:45 [notice] 36#36: gracefully shutting down
+2023/12/05 21:29:45 [notice] 37#37: gracefully shutting down
+2023/12/05 21:29:45 [notice] 35#35: gracefully shutting down
+2023/12/05 21:29:45 [notice] 39#39: gracefully shutting down
+2023/12/05 21:29:45 [notice] 38#38: gracefully shutting down
+2023/12/05 21:29:45 [notice] 40#40: gracefully shutting down
+2023/12/05 21:29:45 [notice] 41#41: gracefully shutting down
+2023/12/05 21:29:45 [notice] 42#42: gracefully shutting down
+2023/12/05 21:29:45 [notice] 43#43: gracefully shutting down
+2023/12/05 21:29:45 [notice] 29#29: exiting
+2023/12/05 21:29:45 [notice] 44#44: exiting
+2023/12/05 21:29:45 [notice] 30#30: exiting
+2023/12/05 21:29:45 [notice] 31#31: exiting
+2023/12/05 21:29:45 [notice] 32#32: exiting
+2023/12/05 21:29:45 [notice] 33#33: exiting
+2023/12/05 21:29:45 [notice] 34#34: exiting
+2023/12/05 21:29:45 [notice] 36#36: exiting
+2023/12/05 21:29:45 [notice] 37#37: exiting
+2023/12/05 21:29:45 [notice] 35#35: exiting
+2023/12/05 21:29:45 [notice] 39#39: exiting
+2023/12/05 21:29:45 [notice] 38#38: exiting
+2023/12/05 21:29:45 [notice] 40#40: exiting
+2023/12/05 21:29:45 [notice] 41#41: exiting
+2023/12/05 21:29:45 [notice] 42#42: exiting
+2023/12/05 21:29:45 [notice] 43#43: exiting
+2023/12/05 21:29:45 [notice] 29#29: exit
+2023/12/05 21:29:45 [notice] 44#44: exit
+2023/12/05 21:29:45 [notice] 30#30: exit
+2023/12/05 21:29:45 [notice] 31#31: exit
+2023/12/05 21:29:45 [notice] 32#32: exit
+2023/12/05 21:29:45 [notice] 33#33: exit
+2023/12/05 21:29:45 [notice] 34#34: exit
+2023/12/05 21:29:45 [notice] 36#36: exit
+2023/12/05 21:29:45 [notice] 37#37: exit
+2023/12/05 21:29:45 [notice] 35#35: exit
+2023/12/05 21:29:45 [notice] 39#39: exit
+2023/12/05 21:29:45 [notice] 38#38: exit
+2023/12/05 21:29:45 [notice] 40#40: exit
+2023/12/05 21:29:45 [notice] 41#41: exit
+2023/12/05 21:29:45 [notice] 42#42: exit
+2023/12/05 21:29:45 [notice] 43#43: exit
+2023/12/05 21:29:45 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/12/05 21:29:45 [notice] 1#1: worker process 32 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: worker process 40 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 21:29:45 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/12/05 21:29:45 [notice] 1#1: worker process 30 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: worker process 34 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: worker process 39 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 21:29:45 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2023/12/05 21:29:45 [notice] 1#1: worker process 36 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 21:29:45 [notice] 1#1: signal 17 (SIGCHLD) received from 43
+2023/12/05 21:29:45 [notice] 1#1: worker process 29 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: worker process 31 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: worker process 33 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: worker process 41 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: worker process 43 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: worker process 44 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 21:29:45 [notice] 1#1: signal 17 (SIGCHLD) received from 41
+2023/12/05 21:29:45 [notice] 1#1: signal 17 (SIGCHLD) received from 42
+2023/12/05 21:29:45 [notice] 1#1: worker process 35 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: worker process 42 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 21:29:45 [notice] 1#1: signal 17 (SIGCHLD) received from 38
+2023/12/05 21:29:45 [notice] 1#1: worker process 38 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 21:29:45 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2023/12/05 21:29:45 [notice] 1#1: worker process 37 exited with code 0
+2023/12/05 21:29:45 [notice] 1#1: exit
+2023/12/05 21:29:58 [notice] 1#1: using the "epoll" event method
+2023/12/05 21:29:58 [notice] 1#1: nginx/1.25.3
+2023/12/05 21:29:58 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2023/12/05 21:29:58 [notice] 1#1: OS: Linux 5.15.133.1-microsoft-standard-WSL2
+2023/12/05 21:29:58 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/12/05 21:29:58 [notice] 1#1: start worker processes
+2023/12/05 21:29:58 [notice] 1#1: start worker process 29
+2023/12/05 21:29:58 [notice] 1#1: start worker process 30
+2023/12/05 21:29:58 [notice] 1#1: start worker process 31
+2023/12/05 21:29:58 [notice] 1#1: start worker process 32
+2023/12/05 21:29:58 [notice] 1#1: start worker process 33
+2023/12/05 21:29:58 [notice] 1#1: start worker process 34
+2023/12/05 21:29:58 [notice] 1#1: start worker process 35
+2023/12/05 21:29:58 [notice] 1#1: start worker process 36
+2023/12/05 21:29:58 [notice] 1#1: start worker process 37
+2023/12/05 21:29:58 [notice] 1#1: start worker process 38
+2023/12/05 21:29:58 [notice] 1#1: start worker process 39
+2023/12/05 21:29:58 [notice] 1#1: start worker process 40
+2023/12/05 21:29:58 [notice] 1#1: start worker process 41
+2023/12/05 21:29:58 [notice] 1#1: start worker process 42
+2023/12/05 21:29:58 [notice] 1#1: start worker process 43
+2023/12/05 21:29:58 [notice] 1#1: start worker process 44
+2023/12/05 21:30:22 [warn] 30#30: *6 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:39:28 [warn] 33#33: *13 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000002, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/05 21:48:25 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/12/05 21:48:25 [notice] 29#29: gracefully shutting down
+2023/12/05 21:48:25 [notice] 42#42: gracefully shutting down
+2023/12/05 21:48:25 [notice] 30#30: gracefully shutting down
+2023/12/05 21:48:25 [notice] 31#31: gracefully shutting down
+2023/12/05 21:48:25 [notice] 33#33: gracefully shutting down
+2023/12/05 21:48:25 [notice] 32#32: gracefully shutting down
+2023/12/05 21:48:25 [notice] 34#34: gracefully shutting down
+2023/12/05 21:48:25 [notice] 35#35: gracefully shutting down
+2023/12/05 21:48:25 [notice] 36#36: gracefully shutting down
+2023/12/05 21:48:25 [notice] 38#38: gracefully shutting down
+2023/12/05 21:48:25 [notice] 37#37: gracefully shutting down
+2023/12/05 21:48:25 [notice] 39#39: gracefully shutting down
+2023/12/05 21:48:25 [notice] 40#40: gracefully shutting down
+2023/12/05 21:48:25 [notice] 41#41: gracefully shutting down
+2023/12/05 21:48:25 [notice] 43#43: gracefully shutting down
+2023/12/05 21:48:25 [notice] 44#44: gracefully shutting down
+2023/12/05 21:48:25 [notice] 29#29: exiting
+2023/12/05 21:48:25 [notice] 42#42: exiting
+2023/12/05 21:48:25 [notice] 30#30: exiting
+2023/12/05 21:48:25 [notice] 31#31: exiting
+2023/12/05 21:48:25 [notice] 33#33: exiting
+2023/12/05 21:48:25 [notice] 32#32: exiting
+2023/12/05 21:48:25 [notice] 34#34: exiting
+2023/12/05 21:48:25 [notice] 35#35: exiting
+2023/12/05 21:48:25 [notice] 36#36: exiting
+2023/12/05 21:48:25 [notice] 38#38: exiting
+2023/12/05 21:48:25 [notice] 37#37: exiting
+2023/12/05 21:48:25 [notice] 39#39: exiting
+2023/12/05 21:48:25 [notice] 40#40: exiting
+2023/12/05 21:48:25 [notice] 41#41: exiting
+2023/12/05 21:48:25 [notice] 43#43: exiting
+2023/12/05 21:48:25 [notice] 44#44: exiting
+2023/12/05 21:48:25 [notice] 29#29: exit
+2023/12/05 21:48:25 [notice] 42#42: exit
+2023/12/05 21:48:25 [notice] 30#30: exit
+2023/12/05 21:48:25 [notice] 31#31: exit
+2023/12/05 21:48:25 [notice] 33#33: exit
+2023/12/05 21:48:25 [notice] 32#32: exit
+2023/12/05 21:48:25 [notice] 34#34: exit
+2023/12/05 21:48:25 [notice] 35#35: exit
+2023/12/05 21:48:25 [notice] 36#36: exit
+2023/12/05 21:48:25 [notice] 38#38: exit
+2023/12/05 21:48:25 [notice] 37#37: exit
+2023/12/05 21:48:25 [notice] 39#39: exit
+2023/12/05 21:48:25 [notice] 40#40: exit
+2023/12/05 21:48:25 [notice] 41#41: exit
+2023/12/05 21:48:25 [notice] 43#43: exit
+2023/12/05 21:48:25 [notice] 44#44: exit
+2023/12/05 21:48:25 [notice] 1#1: signal 17 (SIGCHLD) received from 43
+2023/12/05 21:48:25 [notice] 1#1: worker process 32 exited with code 0
+2023/12/05 21:48:25 [notice] 1#1: worker process 43 exited with code 0
+2023/12/05 21:48:25 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 21:48:25 [notice] 1#1: signal 17 (SIGCHLD) received from 38
+2023/12/05 21:48:25 [notice] 1#1: worker process 29 exited with code 0
+2023/12/05 21:48:25 [notice] 1#1: worker process 30 exited with code 0
+2023/12/05 21:48:25 [notice] 1#1: worker process 34 exited with code 0
+2023/12/05 21:48:25 [notice] 1#1: worker process 38 exited with code 0
+2023/12/05 21:48:25 [notice] 1#1: worker process 39 exited with code 0
+2023/12/05 21:48:25 [notice] 1#1: worker process 41 exited with code 0
+2023/12/05 21:48:25 [notice] 1#1: worker process 42 exited with code 0
+2023/12/05 21:48:25 [notice] 1#1: worker process 44 exited with code 0
+2023/12/05 21:48:25 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 21:48:25 [notice] 1#1: signal 17 (SIGCHLD) received from 39
+2023/12/05 21:48:26 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/12/05 21:48:26 [notice] 1#1: worker process 33 exited with code 0
+2023/12/05 21:48:26 [notice] 1#1: worker process 36 exited with code 0
+2023/12/05 21:48:26 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 21:48:26 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2023/12/05 21:48:26 [notice] 1#1: worker process 31 exited with code 0
+2023/12/05 21:48:26 [notice] 1#1: worker process 40 exited with code 0
+2023/12/05 21:48:26 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 21:48:26 [notice] 1#1: signal 17 (SIGCHLD) received from 37
+2023/12/05 21:48:26 [notice] 1#1: worker process 37 exited with code 0
+2023/12/05 21:48:26 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/05 21:48:26 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/12/05 21:48:26 [notice] 1#1: worker process 35 exited with code 0
+2023/12/05 21:48:26 [notice] 1#1: exit
+2023/12/07 21:25:09 [notice] 1#1: using the "epoll" event method
+2023/12/07 21:25:09 [notice] 1#1: nginx/1.25.3
+2023/12/07 21:25:09 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2023/12/07 21:25:09 [notice] 1#1: OS: Linux 5.15.133.1-microsoft-standard-WSL2
+2023/12/07 21:25:09 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/12/07 21:25:09 [notice] 1#1: start worker processes
+2023/12/07 21:25:09 [notice] 1#1: start worker process 29
+2023/12/07 21:25:09 [notice] 1#1: start worker process 30
+2023/12/07 21:25:09 [notice] 1#1: start worker process 31
+2023/12/07 21:25:09 [notice] 1#1: start worker process 32
+2023/12/07 21:25:09 [notice] 1#1: start worker process 33
+2023/12/07 21:25:09 [notice] 1#1: start worker process 34
+2023/12/07 21:25:09 [notice] 1#1: start worker process 35
+2023/12/07 21:25:09 [notice] 1#1: start worker process 36
+2023/12/07 21:25:09 [notice] 1#1: start worker process 37
+2023/12/07 21:25:09 [notice] 1#1: start worker process 38
+2023/12/07 21:25:09 [notice] 1#1: start worker process 39
+2023/12/07 21:25:09 [notice] 1#1: start worker process 40
+2023/12/07 21:25:09 [notice] 1#1: start worker process 41
+2023/12/07 21:25:09 [notice] 1#1: start worker process 42
+2023/12/07 21:25:09 [notice] 1#1: start worker process 43
+2023/12/07 21:25:09 [notice] 1#1: start worker process 44
+2023/12/07 21:28:10 [warn] 33#33: *12 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.20.0.1, server: , request: "POST /tinyfilemanager.php?p=VOD HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/tinyfilemanager.php?p=VOD&upload"
+2023/12/07 21:28:42 [error] 36#36: *20 open() "/IPTV/input.html" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /input.html HTTP/1.1", host: "localhost:8080"
+2023/12/07 21:29:05 [warn] 38#38: *24 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000002, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 19:42:41 [warn] 42#42: *35 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000003, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 19:45:46 [warn] 43#43: *37 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000004, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 19:46:37 [warn] 44#44: *39 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000005, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 19:46:49 [warn] 29#29: *41 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000006, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 19:48:28 [warn] 29#29: *45 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000007, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 19:49:05 [warn] 29#29: *49 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000008, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 19:50:06 [warn] 29#29: *53 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000009, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 19:50:46 [warn] 29#29: *55 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000010, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 19:51:24 [warn] 29#29: *57 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000011, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 19:51:32 [warn] 29#29: *57 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000012, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 19:52:30 [warn] 29#29: *61 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000013, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 20:30:52 [error] 29#29: *69 client intended to send too large body: 75484369 bytes, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 20:54:41 [error] 29#29: *70 client intended to send too large body: 75484369 bytes, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 20:57:39 [error] 29#29: *72 client intended to send too large body: 75484369 bytes, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 20:58:06 [error] 29#29: *75 client intended to send too large body: 75484369 bytes, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 21:02:23 [error] 30#30: *76 client intended to send too large body: 75484369 bytes, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 21:02:33 [error] 30#30: *77 client intended to send too large body: 75484369 bytes, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 21:08:25 [error] 30#30: *78 client intended to send too large body: 75484369 bytes, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 21:08:29 [error] 30#30: *79 client intended to send too large body: 75484369 bytes, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 21:08:36 [error] 30#30: *80 client intended to send too large body: 75484369 bytes, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 21:08:40 [error] 30#30: *81 client intended to send too large body: 75484369 bytes, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 21:08:47 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/12/08 21:08:47 [notice] 29#29: gracefully shutting down
+2023/12/08 21:08:47 [notice] 30#30: gracefully shutting down
+2023/12/08 21:08:47 [notice] 31#31: gracefully shutting down
+2023/12/08 21:08:47 [notice] 33#33: gracefully shutting down
+2023/12/08 21:08:47 [notice] 30#30: exiting
+2023/12/08 21:08:47 [notice] 32#32: gracefully shutting down
+2023/12/08 21:08:47 [notice] 37#37: gracefully shutting down
+2023/12/08 21:08:47 [notice] 35#35: gracefully shutting down
+2023/12/08 21:08:47 [notice] 34#34: gracefully shutting down
+2023/12/08 21:08:47 [notice] 36#36: gracefully shutting down
+2023/12/08 21:08:47 [notice] 38#38: gracefully shutting down
+2023/12/08 21:08:47 [notice] 40#40: gracefully shutting down
+2023/12/08 21:08:47 [notice] 41#41: gracefully shutting down
+2023/12/08 21:08:47 [notice] 39#39: gracefully shutting down
+2023/12/08 21:08:47 [notice] 42#42: gracefully shutting down
+2023/12/08 21:08:47 [notice] 44#44: gracefully shutting down
+2023/12/08 21:08:47 [notice] 43#43: gracefully shutting down
+2023/12/08 21:08:47 [notice] 29#29: exiting
+2023/12/08 21:08:47 [notice] 31#31: exiting
+2023/12/08 21:08:47 [notice] 33#33: exiting
+2023/12/08 21:08:47 [notice] 30#30: exit
+2023/12/08 21:08:47 [notice] 32#32: exiting
+2023/12/08 21:08:47 [notice] 35#35: exiting
+2023/12/08 21:08:47 [notice] 37#37: exiting
+2023/12/08 21:08:47 [notice] 36#36: exiting
+2023/12/08 21:08:47 [notice] 34#34: exiting
+2023/12/08 21:08:47 [notice] 38#38: exiting
+2023/12/08 21:08:47 [notice] 40#40: exiting
+2023/12/08 21:08:47 [notice] 41#41: exiting
+2023/12/08 21:08:47 [notice] 39#39: exiting
+2023/12/08 21:08:47 [notice] 42#42: exiting
+2023/12/08 21:08:47 [notice] 44#44: exiting
+2023/12/08 21:08:47 [notice] 43#43: exiting
+2023/12/08 21:08:47 [notice] 29#29: exit
+2023/12/08 21:08:47 [notice] 31#31: exit
+2023/12/08 21:08:47 [notice] 32#32: exit
+2023/12/08 21:08:47 [notice] 33#33: exit
+2023/12/08 21:08:47 [notice] 35#35: exit
+2023/12/08 21:08:47 [notice] 37#37: exit
+2023/12/08 21:08:47 [notice] 36#36: exit
+2023/12/08 21:08:47 [notice] 34#34: exit
+2023/12/08 21:08:47 [notice] 38#38: exit
+2023/12/08 21:08:47 [notice] 40#40: exit
+2023/12/08 21:08:47 [notice] 41#41: exit
+2023/12/08 21:08:47 [notice] 39#39: exit
+2023/12/08 21:08:47 [notice] 42#42: exit
+2023/12/08 21:08:47 [notice] 44#44: exit
+2023/12/08 21:08:47 [notice] 43#43: exit
+2023/12/08 21:08:47 [notice] 1#1: signal 17 (SIGCHLD) received from 39
+2023/12/08 21:08:47 [notice] 1#1: worker process 30 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: worker process 32 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: worker process 37 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: worker process 38 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: worker process 39 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/08 21:08:47 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2023/12/08 21:08:47 [notice] 1#1: worker process 31 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: worker process 36 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: worker process 43 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/08 21:08:47 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2023/12/08 21:08:47 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/12/08 21:08:47 [notice] 1#1: worker process 29 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: worker process 33 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: worker process 34 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: worker process 42 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: worker process 44 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: signal 29 (SIGIO) received
+2023/12/08 21:08:47 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/12/08 21:08:47 [notice] 1#1: signal 17 (SIGCHLD) received from 40
+2023/12/08 21:08:47 [notice] 1#1: worker process 35 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: worker process 40 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: worker process 41 exited with code 0
+2023/12/08 21:08:47 [notice] 1#1: exit
+2023/12/08 21:08:48 [notice] 1#1: using the "epoll" event method
+2023/12/08 21:08:48 [notice] 1#1: nginx/1.25.3
+2023/12/08 21:08:48 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2023/12/08 21:08:48 [notice] 1#1: OS: Linux 5.15.133.1-microsoft-standard-WSL2
+2023/12/08 21:08:48 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/12/08 21:08:48 [notice] 1#1: start worker processes
+2023/12/08 21:08:48 [notice] 1#1: start worker process 29
+2023/12/08 21:08:48 [notice] 1#1: start worker process 30
+2023/12/08 21:08:48 [notice] 1#1: start worker process 31
+2023/12/08 21:08:48 [notice] 1#1: start worker process 32
+2023/12/08 21:08:48 [notice] 1#1: start worker process 33
+2023/12/08 21:08:48 [notice] 1#1: start worker process 34
+2023/12/08 21:08:48 [notice] 1#1: start worker process 35
+2023/12/08 21:08:48 [notice] 1#1: start worker process 36
+2023/12/08 21:08:48 [notice] 1#1: start worker process 37
+2023/12/08 21:08:48 [notice] 1#1: start worker process 38
+2023/12/08 21:08:48 [notice] 1#1: start worker process 39
+2023/12/08 21:08:48 [notice] 1#1: start worker process 40
+2023/12/08 21:08:48 [notice] 1#1: start worker process 41
+2023/12/08 21:08:48 [notice] 1#1: start worker process 42
+2023/12/08 21:08:48 [notice] 1#1: start worker process 43
+2023/12/08 21:08:48 [notice] 1#1: start worker process 44
+2023/12/08 21:08:55 [warn] 29#29: *1 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 21:52:04 [warn] 43#43: *33 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000002, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 21:52:13 [warn] 44#44: *36 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000003, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 21:52:21 [warn] 29#29: *39 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000004, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/08 22:01:59 [error] 29#29: *55 open() "/IPTV/yoururl" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /yoururl?file=fireplace-logo.mp4 HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/listfiles.php"
+2023/12/08 22:02:05 [error] 29#29: *55 open() "/IPTV/yoururl" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /yoururl?file=sample-15s.mp4 HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/listfiles.php"
+2023/12/08 23:56:53 [error] 29#29: *71 open() "/IPTV/struts2-showcase/struts/utils.js" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase/struts/utils.js HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:54 [error] 29#29: *78 open() "/IPTV/oXygenLicenseServlet/index.jsp" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /oXygenLicenseServlet/index.jsp HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:54 [error] 31#31: *79 "/IPTV/dashboard/index.php" is not found (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /dashboard/ HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:55 [error] 31#31: *80 "/IPTV/js/index.php" is not found (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /js/?${jndi:dns://MDEDiscovery46d0b5d95dSeenInTheWildGet-8080} HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 31#31: *82 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 32#32: *84 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 30#30: *81 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 31#31: *83 open() "/IPTV/struts2-showcase/struts/tooltip.gif" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase/struts/tooltip.gif HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 32#32: *88 open() "/IPTV/struts2-showcase/struts/domtt.css" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase/struts/domtt.css HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 31#31: *92 open() "/IPTV/struts2-showcase/struts/domTT.js" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase/struts/domTT.js HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 31#31: *93 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 32#32: *94 open() "/IPTV/struts2-showcase/struts/inputtransfersselect.js" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase/struts/inputtransfersselect.js HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 30#30: *95 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 33#33: *96 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 31#31: *97 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 30#30: *98 open() "/IPTV/struts2-showcase/struts/optiontransferselect.js" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase/struts/optiontransferselect.js HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 32#32: *105 open() "/IPTV/struts2-showcase" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 31#31: *108 open() "/IPTV/index.action/struts/utils.js" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /index.action/struts/utils.js HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 31#31: *109 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 31#31: *113 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 31#31: *111 open() "/IPTV/struts2-showcase/token/transfer4.action" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "POST /struts2-showcase/token/transfer4.action HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 31#31: *112 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 33#33: *116 open() "/IPTV/struts2-showcase/${jndi:dns:/MDEDiscovery46d0b5d95dApacheStruts2-8080}" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase/${jndi:dns://MDEDiscovery46d0b5d95dApacheStruts2-8080} HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 31#31: *110 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 34#34: *118 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 30#30: *122 open() "/IPTV/struts2-showcase/token/transfer4.action" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "POST /struts2-showcase/token/transfer4.action HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 30#30: *127 open() "/IPTV/analytics/telemetry/ph/api/hyper/send" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "POST /analytics/telemetry/ph/api/hyper/send?_c=${jndi:dns://MDEDiscovery46d0b5d95dVMwarevCenter-8080}&i=test HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 30#30: *128 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 32#32: *133 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 30#30: *129 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 30#30: *132 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 33#33: *139 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 34#34: *141 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 32#32: *142 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 32#32: *149 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 33#33: *153 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 32#32: *151 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 32#32: *150 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 33#33: *162 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 34#34: *161 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 34#34: *165 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 35#35: *167 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 36#36: *169 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 37#37: *170 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 33#33: *179 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 33#33: *180 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 33#33: *182 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 34#34: *183 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 34#34: *191 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 37#37: *192 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 36#36: *193 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 34#34: *200 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 35#35: *201 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 36#36: *204 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 35#35: *208 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 34#34: *209 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 36#36: *211 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 34#34: *216 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 36#36: *221 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 35#35: *222 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 38#38: *227 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 37#37: *225 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 36#36: *233 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 37#37: *234 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 36#36: *236 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080", referrer: "${jndi:dns://MDEDiscovery46d0b5d95dReferer-8080}"
+2023/12/08 23:56:56 [error] 38#38: *238 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 36#36: *245 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 37#37: *246 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 37#37: *250 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 38#38: *251 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 39#39: *252 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 37#37: *254 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 37#37: *263 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 37#37: *264 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 39#39: *266 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 40#40: *272 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 39#39: *271 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 37#37: *275 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 40#40: *273 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 37#37: *284 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 38#38: *285 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 39#39: *289 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 38#38: *291 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 40#40: *292 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 39#39: *293 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 39#39: *302 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 38#38: *303 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 38#38: *306 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 40#40: *307 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 38#38: *312 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 39#39: *313 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 41#41: *321 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 40#40: *320 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 40#40: *325 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 41#41: *326 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 41#41: *330 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 40#40: *331 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 40#40: *336 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 40#40: *337 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 40#40: *338 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 41#41: *344 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 41#41: *343 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:56 [error] 41#41: *347 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 41#41: *348 open() "/IPTV/api/v2/${jndi:dns:/MDEDiscovery46d0b5d95dSeenInTheWildGet-8080}" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /api/v2/${jndi:dns://MDEDiscovery46d0b5d95dSeenInTheWildGet-8080} HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 41#41: *349 "/IPTV/api/index.php" is not found (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /api/?${jndi:dns://MDEDiscovery46d0b5d95dSeenInTheWildGet-8080} HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 41#41: *350 open() "/IPTV/index.html" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /index.html?${jndi:dns://MDEDiscovery46d0b5d95dSeenInTheWildGet-8080} HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 41#41: *351 open() "/IPTV/login" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /login HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 41#41: *354 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 42#42: *357 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "POST /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 42#42: *358 open() "/IPTV/login" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "POST /login HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 42#42: *361 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 42#42: *364 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 42#42: *367 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 42#42: *370 "/IPTV/cgi-bin/index.php" is not found (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /cgi-bin/ HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 42#42: *373 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 42#42: *376 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 43#43: *378 open() "/IPTV/JSPWiki/wiki/${jndi:dns:/MDEDiscovery46d0b5d95dApacheJspWiki-8080}" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /JSPWiki/wiki/${jndi:dns://MDEDiscovery46d0b5d95dApacheJspWiki-8080} HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 42#42: *380 open() "/IPTV/webtools/control/main" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /webtools/control/main HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 43#43: *381 open() "/IPTV/broker/xml" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "POST /broker/xml HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 43#43: *382 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 44#44: *383 open() "/IPTV/broker/xml" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "POST /broker/xml HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 43#43: *385 open() "/IPTV/portal/info.jsp" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /portal/info.jsp HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 43#43: *387 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 43#43: *390 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 43#43: *393 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/08 23:56:57 [error] 43#43: *398 "/IPTV/cgi-bin/index.php" is not found (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /cgi-bin/ HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:49 [error] 31#31: *415 open() "/IPTV/struts2-showcase/struts/utils.js" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase/struts/utils.js HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:50 [error] 44#44: *420 open() "/IPTV/oXygenLicenseServlet/index.jsp" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /oXygenLicenseServlet/index.jsp HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:50 [error] 44#44: *421 "/IPTV/dashboard/index.php" is not found (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /dashboard/ HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:50 [error] 44#44: *422 "/IPTV/js/index.php" is not found (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /js/?${jndi:dns://MDEDiscovery46d0b5d95dSeenInTheWildGet-8080} HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 44#44: *423 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 29#29: *426 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 32#32: *427 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 31#31: *424 open() "/IPTV/struts2-showcase/struts/tooltip.gif" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase/struts/tooltip.gif HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 30#30: *425 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 29#29: *429 open() "/IPTV/struts2-showcase/struts/domtt.css" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase/struts/domtt.css HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 29#29: *434 open() "/IPTV/struts2-showcase/struts/domTT.js" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase/struts/domTT.js HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 44#44: *437 open() "/IPTV/struts2-showcase/struts/inputtransfersselect.js" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase/struts/inputtransfersselect.js HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 44#44: *439 open() "/IPTV/struts2-showcase/struts/optiontransferselect.js" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase/struts/optiontransferselect.js HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 44#44: *440 open() "/IPTV/struts2-showcase" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 44#44: *441 open() "/IPTV/index.action/struts/utils.js" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /index.action/struts/utils.js HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 30#30: *442 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 32#32: *444 open() "/IPTV/struts2-showcase/token/transfer4.action" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "POST /struts2-showcase/token/transfer4.action HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 29#29: *445 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 30#30: *443 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 32#32: *448 open() "/IPTV/struts2-showcase/${jndi:dns:/MDEDiscovery46d0b5d95dApacheStruts2-8080}" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /struts2-showcase/${jndi:dns://MDEDiscovery46d0b5d95dApacheStruts2-8080} HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 29#29: *446 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 29#29: *451 open() "/IPTV/struts2-showcase/token/transfer4.action" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "POST /struts2-showcase/token/transfer4.action HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 31#31: *456 open() "/IPTV/analytics/telemetry/ph/api/hyper/send" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "POST /analytics/telemetry/ph/api/hyper/send?_c=${jndi:dns://MDEDiscovery46d0b5d95dVMwarevCenter-8080}&i=test HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 29#29: *458 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 29#29: *462 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 32#32: *460 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 30#30: *461 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 30#30: *470 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 32#32: *471 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 31#31: *472 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 29#29: *473 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 32#32: *482 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 31#31: *484 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 32#32: *483 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 29#29: *485 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 32#32: *494 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 30#30: *495 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 34#34: *496 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 33#33: *497 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 32#32: *506 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 33#33: *507 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 30#30: *508 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 31#31: *509 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 33#33: *518 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 32#32: *520 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 34#34: *519 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 35#35: *521 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 35#35: *531 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 33#33: *533 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 35#35: *530 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 33#33: *532 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 35#35: *543 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 33#33: *545 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 36#36: *542 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 35#35: *544 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 35#35: *554 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 36#36: *555 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 33#33: *556 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 34#34: *557 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 35#35: *566 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 36#36: *567 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080", referrer: "${jndi:dns://MDEDiscovery46d0b5d95dReferer-8080}"
+2023/12/10 23:56:52 [error] 34#34: *568 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 33#33: *569 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 34#34: *579 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 34#34: *578 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 35#35: *581 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 35#35: *582 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 34#34: *590 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 35#35: *591 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 37#37: *595 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 36#36: *599 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 36#36: *598 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 37#37: *597 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 36#36: *608 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 37#37: *609 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 38#38: *614 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 36#36: *612 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 38#38: *618 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 37#37: *617 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 36#36: *626 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 37#37: *627 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 36#36: *630 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 39#39: *631 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 38#38: *637 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 39#39: *639 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 38#38: *636 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 38#38: *647 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 37#37: *648 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 37#37: *651 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 38#38: *652 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 38#38: *659 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 37#37: *658 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 39#39: *664 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 39#39: *668 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 40#40: *669 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 39#39: *672 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 40#40: *673 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 40#40: *676 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 40#40: *681 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 39#39: *682 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 40#40: *685 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 39#39: *687 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:52 [error] 40#40: *689 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 39#39: *690 open() "/IPTV/api/v2/${jndi:dns:/MDEDiscovery46d0b5d95dSeenInTheWildGet-8080}" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /api/v2/${jndi:dns://MDEDiscovery46d0b5d95dSeenInTheWildGet-8080} HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 40#40: *691 "/IPTV/api/index.php" is not found (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /api/?${jndi:dns://MDEDiscovery46d0b5d95dSeenInTheWildGet-8080} HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 40#40: *692 open() "/IPTV/index.html" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /index.html?${jndi:dns://MDEDiscovery46d0b5d95dSeenInTheWildGet-8080} HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 40#40: *693 open() "/IPTV/login" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /login HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 40#40: *696 open() "/IPTV/JSPWiki/wiki/${jndi:dns:/MDEDiscovery46d0b5d95dApacheJspWiki-8080}" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /JSPWiki/wiki/${jndi:dns://MDEDiscovery46d0b5d95dApacheJspWiki-8080} HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 41#41: *697 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 40#40: *698 open() "/IPTV/webtools/control/main" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /webtools/control/main HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 40#40: *700 open() "/IPTV/broker/xml" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "POST /broker/xml HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 40#40: *702 open() "/IPTV/broker/xml" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "POST /broker/xml HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 40#40: *703 open() "/IPTV/portal/info.jsp" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /portal/info.jsp HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 40#40: *704 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "POST /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 41#41: *705 open() "/IPTV/login" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "POST /login HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 41#41: *708 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 41#41: *711 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 41#41: *714 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 41#41: *717 "/IPTV/cgi-bin/index.php" is not found (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /cgi-bin/ HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 41#41: *720 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 41#41: *723 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 42#42: *726 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 42#42: *729 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 42#42: *732 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 42#42: *735 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/10 23:56:53 [error] 42#42: *740 "/IPTV/cgi-bin/index.php" is not found (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /cgi-bin/ HTTP/1.1", host: "127.0.0.1:8080"
+2023/12/11 15:33:47 [error] 43#43: *753 open() "/IPTV/favicon.ico" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/listfiles.php"
