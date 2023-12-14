@@ -825,3 +825,31 @@
 2023/12/10 23:56:53 [error] 42#42: *735 open() "/IPTV/:undefined" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /:undefined HTTP/1.1", host: "127.0.0.1:8080"
 2023/12/10 23:56:53 [error] 42#42: *740 "/IPTV/cgi-bin/index.php" is not found (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /cgi-bin/ HTTP/1.1", host: "127.0.0.1:8080"
 2023/12/11 15:33:47 [error] 43#43: *753 open() "/IPTV/favicon.ico" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/listfiles.php"
+2023/12/13 15:33:32 [notice] 1#1: using the "epoll" event method
+2023/12/13 15:33:32 [notice] 1#1: nginx/1.25.3
+2023/12/13 15:33:32 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r10) 
+2023/12/13 15:33:32 [notice] 1#1: OS: Linux 5.15.133.1-microsoft-standard-WSL2
+2023/12/13 15:33:32 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/12/13 15:33:32 [notice] 1#1: start worker processes
+2023/12/13 15:33:32 [notice] 1#1: start worker process 29
+2023/12/13 15:33:32 [notice] 1#1: start worker process 30
+2023/12/13 15:33:32 [notice] 1#1: start worker process 31
+2023/12/13 15:33:32 [notice] 1#1: start worker process 32
+2023/12/13 15:33:32 [notice] 1#1: start worker process 33
+2023/12/13 15:33:32 [notice] 1#1: start worker process 34
+2023/12/13 15:33:32 [notice] 1#1: start worker process 35
+2023/12/13 15:33:32 [notice] 1#1: start worker process 36
+2023/12/13 15:33:32 [notice] 1#1: start worker process 37
+2023/12/13 15:33:32 [notice] 1#1: start worker process 38
+2023/12/13 15:33:32 [notice] 1#1: start worker process 39
+2023/12/13 15:33:32 [notice] 1#1: start worker process 40
+2023/12/13 15:33:32 [notice] 1#1: start worker process 41
+2023/12/13 15:33:32 [notice] 1#1: start worker process 42
+2023/12/13 15:33:32 [notice] 1#1: start worker process 43
+2023/12/13 15:33:32 [notice] 1#1: start worker process 44
+2023/12/13 15:33:38 [error] 30#30: *1 open() "/IPTV/favicon.ico" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/showchannels.php"
+2023/12/13 20:31:38 [error] 33#33: *22 open() "/IPTV/files_storage/owl.jpg" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /files_storage/owl.jpg HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/listfiles.php"
+2023/12/13 20:31:48 [error] 33#33: *22 open() "/IPTV/files_storage/sample-15s.mp4" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /files_storage/sample-15s.mp4 HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/listfiles.php"
+2023/12/13 20:36:44 [error] 35#35: *32 open() "/IPTV/favicon.ico" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/listfiles.php"
+2023/12/13 22:03:48 [warn] 30#30: *155 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"
+2023/12/13 22:04:13 [warn] 30#30: *155 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000002, client: 172.20.0.1, server: , request: "POST /upload2.php HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/upload.php"

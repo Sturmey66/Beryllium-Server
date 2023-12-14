@@ -15,5 +15,5 @@ xmlstarlet ed -L -s /ChannelList -t elem -n channel -v ""\
  -s "/ChannelList/channel[last()]" -t elem -n "tvg-logo" -v "$1"\
  -s "/ChannelList/channel[last()]" -t elem -n "title"    -v "$2"\
  -s "/ChannelList/channel[last()]" -t elem -n "url" -v "$3"\
- ../channels.xml
+ IPTV/channels.xml
 fi

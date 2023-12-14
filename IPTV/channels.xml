@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ChannelList>
+  <channel id="1">
+    <logo>https://tvpmlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/70/01/68/USAJ2200014K9_20201208T081550.png</logo>
+    <title>US | ION Plus</title>
+    <url>https://live-news-manifest.tubi.video/live-news-manifest/csm/extlive/tubiprd01,ION-Plus.m3u8</url>
+  </channel>
+  <channel id="2">
+    <logo>https://od.lk/s/MF8yMjY0NDYwOTdf/Stirr_Blue_510x510.png</logo>
+    <title>Electric Now</title>
+    <url>https://dai.google.com/linear/hls/event/KsvJAc81Qoewj6opYso6Fw/master.m3u8</url>
+  </channel>
+  <channel id="3">
+    <logo>https://dashradio-files.s3.amazonaws.com/development/icon_logos/229/logos/ec3bfac0-18e4-488b-b2f5-42451fb589e6.png</logo>
+    <title>Dash Radio | Smooth Jazz Hits</title>
+    <url>https://ice55.securenetsystems.net/DASH44</url>
+  </channel>
+  <channel id="4">
+    <logo>test8</logo>
+    <title>test8</title>
+    <url>test8</url>
+  </channel>
+</ChannelList>
