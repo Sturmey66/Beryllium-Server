@@ -20,4 +20,19 @@
     <title>test8</title>
     <url>test8</url>
   </channel>
+  <channel id="6">
+    <logo>test14</logo>
+    <title>test14</title>
+    <url>test14</url>
+  </channel>
+    <channel id="7">
+    <logo>test16</logo>
+    <title>test16</title>
+    <url>test16</url>
+  </channel>
+  <channel id="8">
+    <logo>test17</logo>
+    <title>test17</title>
+    <url>test17</url>
+  </channel>
 </ChannelList>

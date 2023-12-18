@@ -3,7 +3,7 @@
 <?php include "./includes/menu.php"; ?>
 <!-- END menu.php INCLUDE -->
 <body>
-  <form action="includes/submit.php" method="post">
+  <form action="submit.php" method="post">
   Please enter the information for the channel you want to add.
   <table>
     <tr><td>Title:</td><td> <input name="var_title"/> </td></tr>
