@@ -1,5 +1,5 @@
 <?php
-header( "refresh:5;url=showchannels.php" );
+header( "refresh:0;url=showchannels.php" );
 
   $title=$_POST['var_title'];
   $logo=$_POST['var_logo'];
@@ -20,15 +20,13 @@ header( "refresh:5;url=showchannels.php" );
   echo "<pre>$output</pre>";
   //  2>&1 | tee -a /tmp/mylog 2>/dev/null >/dev/null &");
   // pause to finish write before continuing. just need a second.
-  
-  sleep(2);
+  sleep(1);
   $title = null;
   $logo = null;
   unset($title);
   $url = null;
   unset($logo);
   unset($url);
-  include 'includes/readxml.php';
  
  ?>
  

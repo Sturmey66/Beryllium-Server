@@ -4,14 +4,21 @@
 <!-- END menu.php INCLUDE -->
 <body>
 
-<br />
+<br><br>
+<p>Please choose and MP4 file to upload.</p>
+<p>Only MP4 files are supported.</p>
+
+            <form action="/upload2.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="fileToUpload" id="fileToUpload" />
+            <br />
+            <input type="submit" value="Upload File" name="submit" />
+            </form>
+<br><br>
+
 <?php
 $arrFiles = array();
 $dirPath = "./VOD";
-
-
-// Method 1: Using scandir()
-
+// Using scandir()
 $files = array_diff(scandir($dirPath), array('.', '..'));
 
 if(!empty($files)){
@@ -31,8 +38,6 @@ if(!empty($files)){
 if(empty($files)){ //check again, since $files may be empty after deletion
     echo 'There are currently no files.';
 }
-
-
 ?>
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 <!-- BEGIN menu.php INCLUDE -->
 <?php include "./includes/menu.php"; ?>
 <!-- END menu.php INCLUDE -->
@@ -12,24 +13,47 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if file already exists
 if (file_exists($target_file)) {
   echo "Sorry, file already exists.";
+	
+    echo "<script>";
+    echo "location.replace(\"errorup.php\")";
+    echo "</script>";
+      
+  
   $uploadOk = 0;
 }
 
 // Allow certain file formats
 if($imageFileType != "mp4" && $imageFileType != "MP4") {
   echo "Sorry, only MP4 files are allowed.";
+	
+    echo "<script>";
+    echo "location.replace(\"errorup.php\")";
+    echo "</script>";
+      
+  
   $uploadOk = 0;
 }
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
   echo "Sorry, your file was not uploaded.";
+	
+    echo "<script>";
+    echo "location.replace(\"errorup.php\")";
+    echo "</script>";
+      
+  
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
   } else {
     echo "Sorry, there was an error uploading your file.";
+	
+    echo "<script>";
+    echo "location.replace(\"errorup.php\")";
+    echo "</script>";
+    
   }
 }
 ?>

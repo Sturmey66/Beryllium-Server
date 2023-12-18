@@ -25,7 +25,7 @@
     <title>test14</title>
     <url>test14</url>
   </channel>
-    <channel id="7">
+  <channel id="7">
     <logo>test16</logo>
     <title>test16</title>
     <url>test16</url>
@@ -34,5 +34,10 @@
     <logo>test17</logo>
     <title>test17</title>
     <url>test17</url>
+  </channel>
+  <channel id="9">
+    <logo>test16</logo>
+    <title>test16</title>
+    <url>test16</url>
   </channel>
 </ChannelList>

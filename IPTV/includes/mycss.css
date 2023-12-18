@@ -1,15 +1,15 @@
 /* This demo stylesheet ONLY styles the nav menu. */
 a {
-    color:#33348e;
+    color:#7c2282;
     text-decoration:none;
     text-transform:uppercase;
 }
 nav {
-    background-color:#33348e;
+    background-color:#7c2282;
     font-family:verdana,arial,times,serif;
     font-size:.875em;
     overflow:hidden;
-    padding-left:4%;
+    padding-left:2%;
 }
 nav ul {
     padding:0;
@@ -31,13 +31,13 @@ nav ul li a {
 nav ul li a:hover,
 nav ul li a:focus {
     background-color:#fff;
-    color:#33348e;
+    color:#7c2282;
     text-decoration:none;
     font-weight:normal;
 }
 /* These selectors style the active page's menu */
 #menu .menu a{
-    color:#33348e;
+    color:#7c2282;
     background-color:#fff;
     pointer-events:none;
 }

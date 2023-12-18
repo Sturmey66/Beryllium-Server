@@ -12,11 +12,10 @@
         </figure>
     <nav>
         <ul>
-            <li class="menu"><a href="runningservices.php">Running Services</a></li>
-            <li class="menu"><a href="addstream.php">Add Stream</a></li>
-            <li class="menu"><a href="showchannels.php">Show Channels</a></li>
-			<li class="menu"><a href="upload.php">Upload File</a></li>
-			<li class="menu"><a href="listfiles.php">List Files</a></li>
+            <li class="menu"><a href="addcamera.php">Add Camera</a></li>
+			<li class="menu"><a href="runningservices.php">Services</a></li>
+            <li class="menu"><a href="showchannels.php">Channels</a></li>
+			<li class="menu"><a href="listfiles.php">Files</a></li>
         </ul>
     </nav>
 	</header>
