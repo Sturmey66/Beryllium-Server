@@ -6,29 +6,29 @@
 #
 #
 #
-id=$(xmlstarlet select -t -v '//channel/@id' /IPTV/channels.xml | sort -n | tail -1)
+id=$(xmlstarlet select -t -v '//camera/@id' /IPTV/channels.xml | sort -n | tail -1)
 idplus=$(($id + 1))
-logo=$1
-title=$2
-url=$3
+# logo=$1
+name=$1
+url=$2
 
 echo $id is the id
 echo $idplus is the id plus one
-echo $logo is the logo
-echo $title is the title 
+# echo $logo is the logo
+echo $name is the name 
 echo $url is the url
 
 
- if [ -z "$3" ]
+ if [ -z "$2" ]
    then
-     echo "The syntax of the command should be: insert.sh 'logo' 'title' 'url'"
+     echo "The syntax of the command should be: insert.sh 'name' 'url'"
  	exit 1
    else
  /usr/bin/xmlstarlet ed -L -s /ChannelList -t elem -n channel -v "" \
   -i "//channel[not(@id)]" -t attr -n id -v $idplus \
-  -s "//channel[@id='$idplus']" -t elem -n "logo" -v "$logo"\
-  -s "//channel[@id='$idplus']" -t elem -n "title"    -v "$title"\
+  -s "//channel[@id='$idplus']" -t elem -n "name"    -v "$name"\
   -s "//channel[@id='$idplus']" -t elem -n "url" -v "$url"\
   /IPTV/channels.xml
  fi
  echo "end of script"
+ 

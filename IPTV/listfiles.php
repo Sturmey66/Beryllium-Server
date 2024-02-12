@@ -14,8 +14,12 @@
             <input type="submit" value="Upload File" name="submit" />
             </form>
 <br><br>
-
 <?php
+echo "<form method=\"post\"><input type=\"submit\" name=\"M3Ubuild\" value=\"M3U build\"></form>";
+
+echo '<a href="http://localhost:8080/live/eden.m3u">http://localhost:8080/live/eden.m3u</a>';
+echo "<br><br><br><br>";
+
 $arrFiles = array();
 $dirPath = "./VOD";
 // Using scandir()
@@ -31,13 +35,24 @@ if(!empty($files)){
             continue;
         }
 //        echo '<a href="VOD/'.$file.'" download>'.$file.'</a><input type="submit" name="delete[VOD/'.$file. ']" value="Delete this file" /><br>';
-		echo '<a href="VOD/'.$file.'" download>'.$file.'</a><input type="submit" name="delete[' . $file . ']" value="delete" /><br><br><br>';
+		echo '<a href="VOD/'.$file.'" download>'.$file.'</a><input type="submit" name="delete[' . $file . ']" value="delete" /><br><br>';
     }
     echo '</form>';
 }
 if(empty($files)){ //check again, since $files may be empty after deletion
     echo 'There are currently no files.';
 }
+
+if (isset($_POST['M3Ubuild'])) {
+    // Execute the shell script
+    $output = shell_exec("/IPTV/scripts/m3u-creation.sh");
+    // echo $output;
+	sleep(2);
+    echo "M3U file has been regenerated";
+	echo '<a href=http://localhost:8080/live/eden.m3u> http://localhost:8080/live/eden.m3u';
+    exit();
+}
+
 ?>
 </body>
 </html>

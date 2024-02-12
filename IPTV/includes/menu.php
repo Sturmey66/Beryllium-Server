@@ -10,12 +10,20 @@
                 <p>making IPTV broadcasting accessible</p>
             </figcaption>
         </figure>
+		<?php
+	// get name and variables from ini file.
+	$ini_array = parse_ini_file("server.ini");
+	$server = ($ini_array["server"]);
+	echo '<div><h2>'.$server.'</h2></div>';
+	// print_r($ini_array);
+	?>
     <nav>
         <ul>
-            <li class="menu"><a href="addcamera.php">Add Camera</a></li>
+            <!-- <li class="menu"><a href="addcamera.php">Add Camera</a></li> -->
 			<li class="menu"><a href="runningservices.php">Services</a></li>
-            <li class="menu"><a href="showchannels.php">Channels</a></li>
+            <li class="menu"><a href="cameras.php">cameras</a></li>
 			<li class="menu"><a href="listfiles.php">Files</a></li>
         </ul>
     </nav>
+
 	</header>

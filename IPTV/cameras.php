@@ -6,9 +6,8 @@
   <form action="submit.php" method="post">
   Please enter the information for the channel you want to add.
   <table>
-    <tr><td>Title:</td><td> <input name="var_title"/> </td></tr>
-	<tr><td>Logo:</td><td> <input name="var_logo"/> </td></tr>
-	<tr><td>URL:</td><td> <input name="var_url"/> </td></tr>
+    <tr><td>Name:</td><td> <input name="var_name"/> <td>No spaces are allowed in the name at this time.</td> </td></tr>
+	<tr><td>URL:</td><td> <input name="var_url"/> <td></td> </td></tr>
   </table>
   <input type="submit" name="my_form_submit_button" 
            value="submit"/>
@@ -22,9 +21,9 @@ $xml=simplexml_load_file("channels.xml") or die("Error: Cannot create object");
 foreach($xml as $entry) {
 $cid = $entry->attributes()['id'];
 echo "ID: " . $cid . "<br>";
-echo "Title: " . $entry->title . "<br>";
+echo "Name: " . $entry->name . "<br>";
 echo "URL: " . $entry->url . "<br>";
-echo "Logo: " . $entry->logo ;
+// echo "Logo: " . $entry->logo ;
 echo "&nbsp<form method=\"post\"><input type=\"hidden\" name=\"id\" value=" . $cid . "><input type=\"submit\" name=\"deleteButton\" value=\"Delete Channel\"></form>";
 echo "<br><br>";
 }
