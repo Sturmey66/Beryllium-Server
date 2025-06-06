@@ -1,0 +1,11 @@
+docker build -t sturmey1966/simpleiptv .
+docker run -p 8080:80 sturmey1966/simpleiptv
+
+docker login
+docker build -t sturmey1966/simpleiptv .
+docker push sturmey1966/simpleiptv
+
+
+docker pull sturmey1966/simpleiptv
+docker run -d -p 8080:80 sturmey1966/simpleiptv
+

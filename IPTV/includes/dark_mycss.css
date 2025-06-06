@@ -1,0 +1,68 @@
+/* This demo stylesheet ONLY styles the nav menu. */
+a {
+    color:#7c2282; 7c2282 is purple.
+    text-decoration:none;
+    text-transform:uppercase;
+}
+nav {
+    background-color:#7c2282;
+    font-family:verdana,arial,times,serif;
+    font-size:.875em;
+    overflow:hidden;
+    padding-left:2%;
+}
+nav ul {
+    padding:0;
+    margin:0;
+}
+nav ul li {
+    list-style-type:none;
+    float:left;
+    position:relative;
+    padding:0;
+    margin:0;
+}
+nav ul li a {
+    display:block;
+    color:#111;
+    padding:.875em .625em;
+    margin:0;
+}
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color:#111;
+    color:#7c2282;
+    text-decoration:none;
+    font-weight:normal;
+}
+/* These selectors style the active page's menu */
+#menu .menu a{
+    color:#7c2282;
+    background-color:#111;
+    pointer-events:none;
+}
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+}
+
+form.inline {
+    display: inline;
+}
+
+input[type="text"] {
+    width: 150px;
+}
+.status-dot {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+.green { background-color: green; }
+.red { background-color: red; }
+    

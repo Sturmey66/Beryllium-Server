@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ChannelList>
+  <channel>
+	<name>Chapel-Test</name>
+	<url>rtsp://admin:Pa55word@192.168.5.64:554/Streaming/Channels/1</url>
+	<tv-logo>http://ewinkler.ca/logo.png</tv-logo>
+  </channel>
+</ChannelList>

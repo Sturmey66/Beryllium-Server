@@ -1,0 +1,71 @@
+📄 CUSTOM SOURCE-AVAILABLE LICENSE v1.0
+
+Copyright © [Year] [Your Name or Organization]
+1. Permission Grant
+
+Subject to the terms of this License, you are permitted to:
+
+    Use the Software for any lawful purpose;
+
+    Modify and create derivative works;
+
+    Distribute the Software or derivative works, with proper attribution.
+
+This License is revocable at any time by the Licensor.
+2. Conditions
+
+You must:
+
+    Include a copy of this License with any distribution;
+
+    Provide attribution to the original author(s);
+
+    Keep this license notice intact in all copies or substantial portions of the Software.
+
+You may not:
+
+    Use the name, trademarks, or branding of the Licensor without permission;
+
+    Misrepresent the origin of the Software;
+
+    Remove or obscure this license or attribution notices.
+
+3. Prohibited Use
+
+The following entities, and any agents, subsidiaries, affiliates, employees, or contractors acting on their behalf, are explicitly forbidden from using, copying, modifying, distributing, sublicensing, or executing the Software in any way:
+
+    dif.eu
+
+    valleyfiber.ca
+
+Any use of this Software by these entities or their representatives is strictly prohibited and shall constitute an infringement of this License.
+4. Disclaimer of Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+5. Limitation of Liability
+
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OF THE SOFTWARE.
+6. Termination
+
+This License will terminate automatically if you violate any of its terms. Upon termination, all rights granted under this License will immediately cease.
+7. Governing Law
+
+This License shall be governed by the laws of [Your Country or Jurisdiction].
+8. Contact
+
+For questions or licensing inquiries, contact: [Your Email or Website]
+📌 Important Notes
+
+    You should replace:
+
+        [Year] with the current year (e.g., 2025)
+
+        [Your Name or Organization] with your name or entity
+
+        [Your Country or Jurisdiction] with your legal residence
+
+    Save this file as LICENSE.txt or LICENSE.md in your repository root.
+
+    This license is not OSI-approved and you must not describe your project as open source.
+
+Would you like a Markdown version of this for GitHub or want it automatically filled with your details?

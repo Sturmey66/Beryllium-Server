@@ -1,0 +1,2 @@
+# php/crontab
+* * * * * /run/php/php-fpm.sock /IPTV/restart-scheduler.php >> /var/log/cron.log 2>&1

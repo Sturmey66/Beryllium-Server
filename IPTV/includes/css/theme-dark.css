@@ -1,0 +1,93 @@
+/* This demo stylesheet ONLY styles the nav menu. */
+body {
+    font: normal 16px Verdana, Arial, sans-serif;
+    color:#a9a;
+    background-color:#020;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 1em;
+}
+h1 {
+	text-align: center;
+}
+figcaption {
+	text-align: center;
+}
+a {
+    color:#a9a;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+nav {
+    background-color:#7c2282;
+    font-family:verdana,arial,times,serif;
+    font-size:.875em;
+    overflow:hidden;
+    padding-left:2%;
+}
+nav ul {
+    padding:0;
+    margin:0;
+}
+nav ul li {
+    list-style-type:none;
+    float:left;
+    position:relative;
+    padding:0;
+    margin:0;
+}
+nav ul li a {
+    display:block;
+    color:#a9a;
+    padding:.875em .625em;
+    margin:0;
+}
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color:#020;
+    color:#a9a;
+    text-decoration:none;
+    font-weight:normal;
+}
+/* These selectors style the active page's menu */
+#menu .menu 
+a{
+    color:#a9a;
+    background-color:#020;
+    pointer-events:none;
+}
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+}
+
+form.inline {
+    display: inline;
+}
+
+input[type="text"] {
+    width: 150px;
+}
+.status-dot {
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+.green { background-color: green; }
+.red { background-color: red; }
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.clock {
+	margin-left: auto;
+    text-align: right;
+}
+    
