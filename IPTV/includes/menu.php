@@ -19,7 +19,7 @@ $theme = $_SESSION['theme'] ?? 'theme-light';
 
 <header>
     <figure>
-        <h1>SimpleIPTV Server</h1>
+        <h1>Beryllium Server</h1>
         <figcaption>
             <p>making IPTV broadcasting accessible</p>
         </figcaption>
@@ -47,7 +47,10 @@ updateTime();
             <li class="menu"><a href="listfiles.php">Files</a></li>
             <li class="menu"><a href="settings.php">Settings</a></li>
             <li class="menu"><a href="wfeeds.php">Web-Feeds</a></li>
+            <li class="menu"><a href="announce.php">Announcements</a></li>
             <li class="menu"><a href="connect.php">Connect</a></li>
+            <li class="menu"><a href="backup.php">Backup</a></li>
+            <li class="menu"><a href="about.php">About</a></li>
             <li class="menu"><a href="logout.php">Logout</a></li>
         </ul>
     </nav>

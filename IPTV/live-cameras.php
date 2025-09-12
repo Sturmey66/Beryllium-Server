@@ -16,16 +16,24 @@ $supervisorConfDir = "/IPTV/supervisor";
 
 // Functions
 function createSupervisorService($name, $url, $serverIP, $supervisorConfDir) {
-    $targetDir = "/IPTV/live/$name";
+    $targetDir = "/LIVE/$name";
     @mkdir($targetDir, 0777, true);
 
-    $streamURL = "http://$serverIP:8080/live/$name/";
+    // URL exposed via nginx
+    $streamURL = "http://$serverIP:8080/$name/";
 
-// command to make Roku compatible live stream.
-$cmd = "/usr/bin/ffmpeg -hide_banner -rtbufsize 1G -i '$url' -fps_mode cfr -c:v libx264 -profile:v baseline -level 3.0 -b:v 5000k -maxrate 5000k -bufsize 600k -r 30 -preset ultrafast -c:a aac -ac 2 -ar 44100 -b:a 96k -strict -2 -f hls -hls_time 2 -hls_list_size 3 -hls_flags independent_segments+delete_segments+split_by_time -hls_segment_type mpegts -hls_base_url '$streamURL' -hls_segment_filename '$targetDir/fileSequence%%05d.ts' '$targetDir/index.m3u8'";
-
-
-
+    // ffmpeg command – NO single quotes inside Supervisor config
+    $cmd = "/usr/bin/ffmpeg -hide_banner -rtbufsize 1G -i $url "
+         . "-fps_mode cfr -c:v libx264 -profile:v baseline -level 3.0 "
+         . "-b:v 1000k -maxrate 1000k -bufsize 600k -r 30 "
+         . "-g 60 -keyint_min 60 -sc_threshold 0 "
+         . "-preset ultrafast -c:a aac -ac 2 -ar 44100 -b:a 96k -strict -2 "
+         . "-f hls -hls_time 2 -hls_list_size 3 "
+         . "-hls_flags independent_segments+delete_segments+split_by_time "
+         . "-hls_segment_type mpegts "
+         . "-hls_base_url $streamURL "
+         . "-hls_segment_filename $targetDir/fileSequence%%05d.ts "
+         . "$targetDir/index.m3u8";
 
     $conf = "[program:iptv-$name]
 command=$cmd
@@ -39,6 +47,7 @@ stdout_logfile=/var/log/iptv-$name.out.log
     shell_exec("supervisorctl reread && supervisorctl update");
 }
 
+
 function addCamera($name, $url, $logo) {
     global $channelsFile;
     $xml = simplexml_load_file($channelsFile);
@@ -51,22 +60,24 @@ function addCamera($name, $url, $logo) {
 
 function deleteCamera($name) {
     global $channelsFile;
-    
-    $xml = simplexml_load_file($channelsFile);
-    $indexToDelete = -1;
 
-    foreach ($xml->channel as $index => $channel) {
-        if (strcasecmp((string)$channel->name, $name) === 0) {
-            $indexToDelete = $index;
+    $dom = new DOMDocument();
+    $dom->preserveWhiteSpace = false;
+    $dom->formatOutput = true;
+    $dom->load($channelsFile);
+
+    $xpath = new DOMXPath($dom);
+    foreach ($xpath->query('//channel') as $channel) {
+        $channelName = $channel->getElementsByTagName('name')->item(0)->nodeValue;
+        if (strcasecmp($channelName, $name) === 0) {
+            $channel->parentNode->removeChild($channel);
             break;
         }
     }
 
-    if ($indexToDelete !== -1) {
-        unset($xml->channel[$indexToDelete]);
-        $xml->asXML($channelsFile);
-    }
+    $dom->save($channelsFile);
 }
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['startService'])) {
@@ -91,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         shell_exec("supervisorctl reread && supervisorctl update");
 
         // Clean up stream folder
-        $streamDir = "/IPTV/live/$name";
+        $streamDir = "/LIVE/$name";
         if (is_dir($streamDir)) {
             array_map('unlink', glob("$streamDir/*"));
             rmdir($streamDir);
@@ -107,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         deleteCamera($name);
 
         // Clean up live stream folder
-        $streamDir = "/IPTV/live/$name";
+        $streamDir = "/LIVE/$name";
         if (is_dir($streamDir)) {
             array_map('unlink', glob("$streamDir/*"));
             rmdir($streamDir);

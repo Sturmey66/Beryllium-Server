@@ -3,7 +3,7 @@ include "./includes/auth.php"; // Session and login check
 require_once __DIR__ . "/includes/functions.php";
 ?>
 <?php
-$vodDir = __DIR__ . "/VOD";
+$vodDir = __DIR__ . "/LIVE/VOD";
 $feedback = "";
 
 // Ensure VOD directory exists

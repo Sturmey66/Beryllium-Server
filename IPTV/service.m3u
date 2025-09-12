@@ -1,8 +1,6 @@
 #EXTM3U
-#EXTINF:-1,camera1cc
-http://192.168.5.106:8080/live/camera1cc/index.m3u8
-#EXTINF:-1,camera2cc
-http://192.168.5.106:8080/live/camera2cc/index.m3u8
+#EXTINF:-1,announce
+http://192.168.5.106:8080/live/announce/index.m3u8
 #EXTINF:-1,Chapel-Test
 http://192.168.5.106:8080/live/Chapel-Test/index.m3u8
 #EXTINF:-1 tvg-logo="https://od.lk/s/MF8yNDM1NjI1MDhf/NTV-CA_400x400.png" group-title="Other",NTV Quii Vidi Gut St John&#039;s NL
