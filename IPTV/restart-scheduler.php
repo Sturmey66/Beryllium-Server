@@ -1,26 +1,48 @@
 <?php
-$settings = parse_ini_file(__DIR__ . '/includes/server.ini');
-$targetTime = isset($settings['restart_time']) ? $settings['restart_time'] : null;
+// Include init.php to get variables like $OUTPUT_DIR
+include __DIR__ . '/includes/init.php';
 
-$current = date('H:i');
-$datestamp = date('Y-m-d H:i');
+$healthFile = __DIR__ . '/includes/health.json';
+$healthData = [];
 
-// Only run at the exact scheduled time
-if ($current === $targetTime) {
-    // Get list of supervisor services
-    exec("supervisorctl status", $output);
+// Get list of supervisor services
+exec("supervisorctl status", $services);
 
-    foreach ($output as $line) {
-        // Only restart services that start with 'iptv-'
-        if (preg_match('/^iptv\-([\w\-]+)/', $line, $matches)) {
-            $service = $matches[0]; // full name like 'iptv-camera1cc'
+foreach ($services as $line) {
+    if (preg_match('/^iptv\-([\w\-]+)/', $line, $matches)) {
+        $safeName = $matches[1];
+        $targetDir = "$OUTPUT_DIR/$safeName"; // index.m3u8 path
+        $m3u8File = "$targetDir/index.m3u8";
 
-            // Restart the service
-            exec("supervisorctl stop $service");
-            sleep(1); // short delay to avoid overlap issues
-            exec("supervisorctl start $service");
-            file_put_contents("/var/log/restart.log", "Restart process initiated for $service at $datestamp\n", FILE_APPEND);
+        if (file_exists($m3u8File)) {
+            $fileModTime = filemtime($m3u8File);
+            $ageSeconds = time() - $fileModTime;
 
+            if ($ageSeconds < 60) {
+                $status = 'running';
+            } else {
+                $status = 'stopped';
+            }
+
+            $healthData[$safeName] = [
+                'status' => $status,
+                'last_update' => date('Y-m-d H:i:s', $fileModTime)
+            ];
+        } else {
+            $healthData[$safeName] = [
+                'status' => 'stopped',
+                'last_update' => 'never'
+            ];
         }
     }
 }
+
+// Save health info without touching last_restart.json
+file_put_contents($healthFile, json_encode($healthData, JSON_PRETTY_PRINT));
+
+// get the date and time
+$dateTime = new DateTime();
+$time = $dateTime->format(DateTime::ATOM);
+
+echo "restart-scheduler has run at $time";
+

@@ -1,220 +1,298 @@
 <?php
-include "./includes/auth.php"; // Session and login check
-require_once __DIR__ . "/includes/functions.php";
+// /IPTV/live-cameras.php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-$channelsFile = __DIR__ . "/channels.xml";
-$serverIni = parse_ini_file(__DIR__ . "/includes/server.ini");
-$serverIP = $serverIni['serverIP'] ?? '127.0.0.1';
-$xml = simplexml_load_file($channelsFile);
-$feedback = "";
+$BASE_DIR = '/IPTV';
+include $BASE_DIR . '/includes/menu.php';
+require_once $BASE_DIR . '/includes/init.php';
+require_once $BASE_DIR . '/includes/functions.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['restart-time'])) {
-    $_SESSION['restart_time'] = $_POST['restart-time'];
-}
-// Paths
-$supervisorConfDir = "/IPTV/supervisor";
+$channelsFile = $BASE_DIR . '/channels.xml';
+$healthFile   = $BASE_DIR . '/includes/health.json';
+$lastRestartFile = $BASE_DIR . '/includes/last_restart.json';
+$supervisorConfDir = $BASE_DIR . '/supervisor';
 
-// Functions
-function createSupervisorService($name, $url, $serverIP, $supervisorConfDir) {
-    $targetDir = "/LIVE/$name";
-    @mkdir($targetDir, 0777, true);
+// init files if missing
+if (!file_exists($lastRestartFile)) file_put_contents($lastRestartFile, json_encode([]));
+if (!file_exists($healthFile)) file_put_contents($healthFile, json_encode([]));
 
-    // URL exposed via nginx
-    $streamURL = "http://$serverIP:8080/$name/";
+// load data
+$lastRestartData = json_decode(file_get_contents($lastRestartFile), true) ?: [];
+$healthData = json_decode(file_get_contents($healthFile), true) ?: [];
 
-    // ffmpeg command – NO single quotes inside Supervisor config
-    $cmd = "/usr/bin/ffmpeg -hide_banner -rtbufsize 1G -i $url "
-         . "-fps_mode cfr -c:v libx264 -profile:v baseline -level 3.0 "
-         . "-b:v 1000k -maxrate 1000k -bufsize 600k -r 30 "
-         . "-g 60 -keyint_min 60 -sc_threshold 0 "
-         . "-preset ultrafast -c:a aac -ac 2 -ar 44100 -b:a 96k -strict -2 "
-         . "-f hls -hls_time 2 -hls_list_size 3 "
-         . "-hls_flags independent_segments+delete_segments+split_by_time "
-         . "-hls_segment_type mpegts "
-         . "-hls_base_url $streamURL "
-         . "-hls_segment_filename $targetDir/fileSequence%%05d.ts "
-         . "$targetDir/index.m3u8";
-
-    $conf = "[program:iptv-$name]
-command=$cmd
-autostart=true
-autorestart=true
-stderr_logfile=/var/log/iptv-$name.err.log
-stdout_logfile=/var/log/iptv-$name.out.log
-";
-
-    file_put_contents("$supervisorConfDir/iptv-$name.conf", $conf);
-    shell_exec("supervisorctl reread && supervisorctl update");
-}
-
-
-function addCamera($name, $url, $logo) {
-    global $channelsFile;
-    $xml = simplexml_load_file($channelsFile);
-    $newChannel = $xml->addChild('channel');
-    $newChannel->addChild('name', $name);
-    $newChannel->addChild('url', $url);
-    $newChannel->addChild('tv-logo', $logo);
-    $xml->asXML($channelsFile);
-}
-
-function deleteCamera($name) {
-    global $channelsFile;
-
-    $dom = new DOMDocument();
-    $dom->preserveWhiteSpace = false;
-    $dom->formatOutput = true;
-    $dom->load($channelsFile);
-
-    $xpath = new DOMXPath($dom);
-    foreach ($xpath->query('//channel') as $channel) {
-        $channelName = $channel->getElementsByTagName('name')->item(0)->nodeValue;
-        if (strcasecmp($channelName, $name) === 0) {
-            $channel->parentNode->removeChild($channel);
-            break;
-        }
-    }
-
-    $dom->save($channelsFile);
-}
-
-
+// POST handling (buttons POST to same page)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['startService'])) {
-        $name = basename($_POST['name']);
-        $url = $_POST['url'];
-        createSupervisorService($name, $url, $serverIP, $supervisorConfDir);
-        shell_exec("supervisorctl start iptv-$name");
-        $feedback = "Started service iptv-$name.";
-    }
+    $name = $_POST['name'] ?? null;
+    $url  = $_POST['url']  ?? null;
+    $safeName = $name ? preg_replace('/[^A-Za-z0-9_-]/', '', $name) : null;
 
-    if (isset($_POST['stopService']) && !empty($_POST['name'])) {
-        $name = basename($_POST['name']);
-        shell_exec("supervisorctl stop iptv-$name");
-
-        // Remove supervisor config
-        $confFile = "$supervisorConfDir/iptv-$name.conf";
-        if (file_exists($confFile)) {
-            unlink($confFile);
+    // Start service
+    if ($name && isset($_POST['startService'])) {
+        // ensure enabled true in XML
+        $dom = new DOMDocument();
+        $dom->preserveWhiteSpace = false;
+        $dom->formatOutput = true;
+        $dom->load($channelsFile);
+        $xpath = new DOMXPath($dom);
+        foreach ($xpath->query('//channel') as $ch) {
+            $n = $ch->getElementsByTagName('name')->item(0);
+            if ($n && strcasecmp($n->nodeValue, $name) === 0) {
+                $enabledNodes = $ch->getElementsByTagName('enabled');
+                if ($enabledNodes->length) {
+                    $enabledNodes->item(0)->nodeValue = 'true';
+                } else {
+                    $ch->appendChild($dom->createElement('enabled', 'true'));
+                }
+                break;
+            }
         }
+        $dom->save($channelsFile);
 
-        // Reload Supervisor config
-        shell_exec("supervisorctl reread && supervisorctl update");
+        // create conf and start supervisor
+        createSupervisorService($safeName, $url ?? '', $serverIP, $serverPort, $supervisorConfDir, $OUTPUT_DIR);
+        shell_exec("supervisorctl start iptv-$safeName 2>&1");
 
-        // Clean up stream folder
-        $streamDir = "/LIVE/$name";
-        if (is_dir($streamDir)) {
-            array_map('unlink', glob("$streamDir/*"));
-            rmdir($streamDir);
-        }
+        // update last_restart
+        $data = json_decode(file_get_contents($lastRestartFile), true);
+        $data[$safeName] = date('Y-m-d H:i:s');
+        file_put_contents($lastRestartFile, json_encode($data));
 
-        $feedback = "Stopped and removed service iptv-$name.";
-    }
-
-
-
-    if (isset($_POST['deleteCamera']) && !empty($_POST['name'])) {
-        $name = $_POST['name'];
-        deleteCamera($name);
-
-        // Clean up live stream folder
-        $streamDir = "/LIVE/$name";
-        if (is_dir($streamDir)) {
-            array_map('unlink', glob("$streamDir/*"));
-            rmdir($streamDir);
-        }
-
-        $feedback = "Deleted camera $name.";
-        header("Location: " . $_SERVER['PHP_SELF']);
+        header('Location: ' . $_SERVER['PHP_SELF']);
         exit;
     }
 
-    if (isset($_POST['addCamera'])) {
-        $name = $_POST['name'];
-        $url = $_POST['url'];
-        $logo = $_POST['logo'];
-        addCamera($name, $url, $logo);
-        $feedback = "Added camera $name.";
+    // Stop service
+    if ($name && isset($_POST['stopService'])) {
+        shell_exec("supervisorctl stop iptv-$safeName 2>&1");
+
+        // set enabled=false in XML
+        $dom = new DOMDocument();
+        $dom->preserveWhiteSpace = false;
+        $dom->formatOutput = true;
+        $dom->load($channelsFile);
+        $xpath = new DOMXPath($dom);
+        foreach ($xpath->query('//channel') as $ch) {
+            $n = $ch->getElementsByTagName('name')->item(0);
+            if ($n && strcasecmp($n->nodeValue, $name) === 0) {
+                $enabledNodes = $ch->getElementsByTagName('enabled');
+                if ($enabledNodes->length) {
+                    $enabledNodes->item(0)->nodeValue = 'false';
+                } else {
+                    $ch->appendChild($dom->createElement('enabled', 'false'));
+                }
+                break;
+            }
+        }
+        $dom->save($channelsFile);
+
+        // remove stream directory
+        $streamDir = rtrim($OUTPUT_DIR, '/') . "/$safeName";
+        if (is_dir($streamDir)) {
+            $files = glob($streamDir . '/*');
+            foreach ($files as $f) if (is_file($f)) unlink($f);
+            rmdir($streamDir);
+        }
+
+        // update last_restart
+        $data = json_decode(file_get_contents($lastRestartFile), true);
+        $data[$safeName] = date('Y-m-d H:i:s');
+        file_put_contents($lastRestartFile, json_encode($data));
+
+        header('Location: ' . $_SERVER['PHP_SELF']);
+        exit;
     }
 
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
+    // Add new camera
+    if ($name && isset($_POST['addCamera'])) {
+        addCamera($name, $url, $_POST['tv-logo'] ?? '', $channelsFile);
+        header('Location: ' . $_SERVER['PHP_SELF']);
+        exit;
+    }
+
+    // Restart service
+    if ($name && isset($_POST['restartService'])) {
+        shell_exec("supervisorctl stop iptv-$safeName 2>&1");
+        sleep(1);
+        createSupervisorService($safeName, $url ?? '', $serverIP, $serverPort, $supervisorConfDir, $OUTPUT_DIR);
+        shell_exec("supervisorctl reread && supervisorctl update");
+        shell_exec("supervisorctl start iptv-$safeName 2>&1");
+
+        $data = json_decode(file_get_contents($lastRestartFile), true);
+        $data[$safeName] = date('Y-m-d H:i:s');
+        file_put_contents($lastRestartFile, json_encode($data));
+
+        header('Location: ' . $_SERVER['PHP_SELF']);
+        exit;
+    }
+
+    // Delete camera
+    if ($name && isset($_POST['deleteCamera'])) {
+        // remove from channels.xml
+        $dom = new DOMDocument();
+        $dom->preserveWhiteSpace = false;
+        $dom->formatOutput = true;
+        $dom->load($channelsFile);
+        $xpath = new DOMXPath($dom);
+        foreach ($xpath->query('//channel') as $ch) {
+            $n = $ch->getElementsByTagName('name')->item(0);
+            if ($n && strcasecmp($n->nodeValue, $name) === 0) {
+                $ch->parentNode->removeChild($ch);
+                break;
+            }
+        }
+        $dom->save($channelsFile);
+
+        // stop supervisor and remove conf
+        shell_exec("supervisorctl stop iptv-$safeName 2>&1");
+        $confFile = $supervisorConfDir . "/iptv-$safeName.conf";
+        if (file_exists($confFile)) unlink($confFile);
+        shell_exec("supervisorctl reread && supervisorctl update");
+
+        // remove stream directory
+        $streamDir = rtrim($OUTPUT_DIR, '/') . "/$safeName";
+        if (is_dir($streamDir)) {
+            array_map('unlink', glob("$streamDir/*"));
+            rmdir($streamDir);
+        }
+
+        // cleanup health and last_restart
+        $h = json_decode(file_get_contents($healthFile), true) ?: [];
+        unset($h[$safeName]);
+        file_put_contents($healthFile, json_encode($h));
+
+        $lr = json_decode(file_get_contents($lastRestartFile), true) ?: [];
+        unset($lr[$safeName]);
+        file_put_contents($lastRestartFile, json_encode($lr));
+
+        header('Location: ' . $_SERVER['PHP_SELF']);
+        exit;
+    }
+}
+
+// Load channels xml for display
+$xml = file_exists($channelsFile) ? simplexml_load_file($channelsFile) : null;
+
+// --- Run health-check once on page load ---
+$healthCheckFile = $BASE_DIR . '/health-check.php';
+if (file_exists($healthCheckFile)) {
+    ob_start();
+    include $healthCheckFile;
+    ob_end_clean();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Live Camera Services</title>
-
-</head>
+<meta charset="utf-8">
+<title>Live Camera Services</title>
+<style>
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 2px solid black; padding: 6px; text-align: left; }
+.status-dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; vertical-align: middle; }
+.green { background: green; }
+.red   { background: red; }
+.yellow { background: yellow; }
+</style>
 <script>
+const STATUS_URL = '/includes/get-status.php';
 function updateStatuses() {
-    fetch('/includes/get-status.php')
-        .then(response => response.json())
+    fetch(STATUS_URL + '?_=' + Date.now())
+        .then(res => res.json())
         .then(data => {
             data.forEach(item => {
-                const statusSpan = document.querySelector(`#status-${item.name}`);
-                if (statusSpan) {
-                    statusSpan.className = "status-dot " + (item.status === "running" ? "green" : "red");
-                    statusSpan.nextSibling.textContent = ` (${item.status})`;
+                const serviceDot = document.getElementById('status-' + item.id);
+                const serviceText = document.getElementById('status-text-' + item.id);
+                const healthDot = document.getElementById('health-' + item.id);
+                const startCell = document.getElementById('start-' + item.id);
+
+                if (serviceDot) serviceDot.className = 'status-dot ' + (item.status === 'running' ? 'green' : 'red');
+                if (serviceText) serviceText.textContent = item.label;
+
+                if (healthDot) {
+                    let cls = 'red';
+                    if (!item.enabled) cls = 'red';
+                    else if (item.enabled && item.status === 'running' && item.health === 'good') cls = 'green';
+                    else if (item.enabled && item.status === 'running' && item.health === 'bad') cls = 'yellow';
+                    healthDot.className = 'status-dot ' + cls;
                 }
+
+                if (startCell) startCell.textContent = item.last_restart ?? 'Never';
             });
-        });
+        })
+        .catch(e => console.error('status fetch error', e));
 }
-
-setInterval(updateStatuses, 15000); // every 15 seconds
-updateStatuses(); // also run on load
+document.addEventListener('DOMContentLoaded', () => {
+    updateStatuses();
+    setInterval(updateStatuses, 5000);
+});
 </script>
-
+</head>
 <body>
-<?php include "./includes/menu.php"; ?>
-<!-- In your HTML head or body -->
-
-
 <h2>Live Camera Services</h2>
 
 <?php if (!empty($feedback)): ?>
-    <p><strong><?= htmlspecialchars($feedback) ?></strong></p>
+<p><strong><?= htmlspecialchars($feedback) ?></strong></p>
 <?php endif; ?>
 
-<!-- Add Camera Form -->
 <h3>Add New Camera</h3>
 <form method="post">
-    <label for="name">Camera Name:</label>
-    <input type="text" name="name" required><br>
-    
-    <label for="url">RTSP URL:</label>
-    <input type="text" name="url" required><br>
-    
-    <label for="logo">TV Logo URL:</label>
-    <input type="text" name="logo" required><br>
-    
+    <label>Camera Name:</label>
+    <input type="text" name="name" required>
+    <label>RTSP URL:</label>
+    <input type="text" name="url" required>
+    <label>TV Logo URL:</label>
+    <input type="text" name="tv-logo">
     <input type="submit" name="addCamera" value="Add Camera">
 </form>
 
 <h3>Existing Cameras</h3>
+
+<?php if ($xml && count($xml->channel) > 0): ?>
+<table>
+<thead>
+<tr>
+    <th>Name</th>
+    <th>URL</th>
+    <th>Service Status</th>
+    <th>Start Time</th>
+    <th>Health</th>
+    <th>Control</th>
+</tr>
+</thead>
+<tbody>
 <?php foreach ($xml->channel as $channel):
-    $name = (string) $channel->name;
-    $url = (string) $channel->url;
-    $logo = (string) $channel->{"tv-logo"};
-    $safeName = basename($name);
-    $status = getSupervisorStatus($safeName);
-    $dotClass = ($status === "running") ? "green" : "red";
+    $name = (string)$channel->name;
+    $url  = (string)$channel->url;
+    $safeName = preg_replace('/[^A-Za-z0-9_-]/', '', $name);
+    $startTime = htmlspecialchars($lastRestartData[$safeName] ?? 'Never');
 ?>
-    <div>
-        <strong><?= htmlspecialchars($name) ?></strong> (<?= htmlspecialchars($url) ?>)
-        <span id="status-<?= htmlspecialchars($name) ?>" class="status-dot <?= $dotClass ?>"></span>
-        (<?= htmlspecialchars($status) ?>)
+<tr>
+    <td><?= htmlspecialchars($name) ?></td>
+    <td><?= htmlspecialchars($url) ?></td>
+    <td>
+        <span id="status-<?= $safeName ?>" class="status-dot red"></span>
+        (<span id="status-text-<?= $safeName ?>">unknown</span>)
+    </td>
+    <td id="start-<?= $safeName ?>"><?= $startTime ?></td>
+    <td><span id="health-<?= $safeName ?>" class="status-dot red"></span></td>
+    <td>
         <form method="post" style="display:inline;">
             <input type="hidden" name="name" value="<?= htmlspecialchars($name) ?>">
             <input type="hidden" name="url" value="<?= htmlspecialchars($url) ?>">
+            <input type="submit" name="restartService" value="Restart">
             <input type="submit" name="startService" value="Start">
             <input type="submit" name="stopService" value="Stop">
             <input type="submit" name="deleteCamera" value="Delete">
         </form>
-    </div>
+    </td>
+</tr>
 <?php endforeach; ?>
+</tbody>
+</table>
+<?php else: ?>
+<p>No cameras found.</p>
+<?php endif; ?>
+
 </body>
 </html>

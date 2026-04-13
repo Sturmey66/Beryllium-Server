@@ -1,13 +1,44 @@
-<?php 
-include "./includes/auth.php"; // Session and login check
-require_once __DIR__ . "/includes/functions.php";
-?>
 <?php
-$settingsFile = __DIR__ . "/includes/server.ini";
-$feedback = "";
+// Enable error reporting
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 
-// Save updated settings
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+// Define base directory
+$BASE_DIR = "/IPTV";
+
+// Start session (menu.php also calls this, so you may skip if menu.php already does)
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// File paths
+$settingsFile = $BASE_DIR . "/includes/server.ini";
+$feedback = "";
+$hash = "";
+
+// =======================
+// FORM HANDLING - MUST BE BEFORE ANY HTML OUTPUT
+// =======================
+
+// Theme change
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['theme'])) {
+    $_SESSION['theme'] = $_POST['theme'];
+    $feedback = "Theme changed to " . htmlspecialchars($_POST['theme']);
+}
+
+// Password hash
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['hashPassword'])) {
+    $plainPassword = $_POST['plainPassword'] ?? '';
+    if (!empty($plainPassword)) {
+        $hash = password_hash($plainPassword, PASSWORD_DEFAULT);
+    } else {
+        $feedback = "Please enter a password to hash.";
+    }
+}
+
+// Settings save
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['saveSettings'])) {
     $newContent = $_POST['iniContent'] ?? '';
     if (!empty($newContent)) {
         if (file_put_contents($settingsFile, $newContent) !== false) {
@@ -20,26 +51,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Load current INI file content
+// Load current content
 $currentContent = file_exists($settingsFile) ? file_get_contents($settingsFile) : '';
 $ini = parse_ini_file($settingsFile, true);
 if ($ini === false) {
     $ini = [];
-    $feedback = "Warning: Failed to parse settings.ini. File may be empty or malformed.";
+    $feedback = "Warning: Failed to parse settings.ini.";
 }
+
+// =======================
+// HTML STARTS HERE
+// =======================
 ?>
-<?php
-$hash = '';
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['plainPassword'])) {
-    $plainPassword = $_POST['plainPassword'];
-    $hash = password_hash($plainPassword, PASSWORD_DEFAULT);
-}
-?>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,39 +70,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['plainPassword'])) {
     <title>Edit Settings</title>
 </head>
 <body>
-<?php include "./includes/menu.php"; ?>
+<?php include $BASE_DIR . "/includes/menu.php"; ?>
+
 <h2>Settings Editor</h2>
 
 <?php if (!empty($feedback)): ?>
     <p><strong><?= htmlspecialchars($feedback) ?></strong></p>
 <?php endif; ?>
 
-<form method="POST" action="set-theme.php">
+<!-- Theme -->
+<form method="post">
     <label for="theme">Choose Theme:</label>
     <select name="theme" id="theme" onchange="this.form.submit()">
-        <option value="theme-light" <?= ($_SESSION['theme'] ?? '') == 'theme-light' ? 'selected' : '' ?>>Light</option>
-        <option value="theme-dark" <?= ($_SESSION['theme'] ?? '') == 'theme-dark' ? 'selected' : '' ?>>Dark</option>
-        <option value="theme-blue" <?= ($_SESSION['theme'] ?? '') == 'theme-blue' ? 'selected' : '' ?>>Blue</option>
-        <option value="theme-hotdog" <?= ($_SESSION['theme'] ?? '') == 'theme-hotdog' ? 'selected' : '' ?>>HotDog</option>
+        <option value="theme-light" <?= ($_SESSION['theme'] ?? '') === 'theme-light' ? 'selected' : '' ?>>Light</option>
+        <option value="theme-dark" <?= ($_SESSION['theme'] ?? '') === 'theme-dark' ? 'selected' : '' ?>>Dark</option>
+        <option value="theme-blue" <?= ($_SESSION['theme'] ?? '') === 'theme-blue' ? 'selected' : '' ?>>Blue</option>
+        <option value="theme-hotdog" <?= ($_SESSION['theme'] ?? '') === 'theme-hotdog' ? 'selected' : '' ?>>HotDog</option>
     </select>
 </form>
+
 <br>
+
+<!-- Password hash -->
 <form method="post">
     <label for="plainPassword">Generate Password Hash:</label>
     <input type="text" name="plainPassword" required>
-    <input type="submit" value="Hash Password">
+    <input type="submit" name="hashPassword" value="Hash Password">
 </form>
 
-<?php if ($hash): ?>
+<?php if (!empty($hash)): ?>
     <p><strong>Hash:</strong> <?= htmlspecialchars($hash) ?></p>
 <?php endif; ?>
+
 <br>
+
+<!-- Settings editor -->
 <form method="post">
     <textarea name="iniContent" rows="20" cols="100" style="font-family: monospace;"><?= htmlspecialchars($currentContent) ?></textarea>
     <br><br>
-    <input type="submit" value="Save Settings">
+    <input type="submit" name="saveSettings" value="Save Settings">
 </form>
-
 
 </body>
 </html>

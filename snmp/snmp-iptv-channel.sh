@@ -1,0 +1,14 @@
+#!/bin/bash
+# Usage: snmp-iptv-channel.sh channel_name metric
+# metric: status, active, last_restart
+
+CHANNEL="$1"
+METRIC="$2"
+SAFE=$(echo "$CHANNEL" | sed 's/[^a-zA-Z0-9]/_/g')
+FILE="/tmp/snmp_iptv/${SAFE}_${METRIC}.txt"
+
+if [[ -f "$FILE" ]]; then
+    cat "$FILE"
+else
+    echo "0"
+fi

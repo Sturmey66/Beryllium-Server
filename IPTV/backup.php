@@ -1,33 +1,57 @@
-<?php 
-include "./includes/auth.php"; // Session and login check
-require_once __DIR__ . "/includes/functions.php";
+<?php
+// Enable error reporting
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-$serverPath = __DIR__ . "/includes/server.ini";
-$channelsPath = __DIR__ . "/channels.xml";
-$wfeedsPath = __DIR__ . "/wfeeds.xml";
+// Project base directory
+$BASE_DIR = "/IPTV";
 
-// Handle uploads
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_FILES['upload_server']) && $_FILES['upload_server']['error'] === UPLOAD_ERR_OK) {
-        move_uploaded_file($_FILES['upload_server']['tmp_name'], $channelsPath);
-        $message = "server.ini restored successfully.";
-    }
-    if (isset($_FILES['upload_channels']) && $_FILES['upload_channels']['error'] === UPLOAD_ERR_OK) {
-        move_uploaded_file($_FILES['upload_channels']['tmp_name'], $channelsPath);
-        $message = "channels.xml restored successfully.";
-    }
-    if (isset($_FILES['upload_wfeeds']) && $_FILES['upload_wfeeds']['error'] === UPLOAD_ERR_OK) {
-        move_uploaded_file($_FILES['upload_wfeeds']['tmp_name'], $wfeedsPath);
-        $message = "wfeeds.xml restored successfully.";
-    }
+// Include core files
+include $BASE_DIR . "/includes/menu.php";
+require_once $BASE_DIR . "/includes/init.php";
+
+// Handle restart time POST (optional, kept for compatibility)
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['restart-time'])) {
+    $_SESSION['restart_time'] = $_POST['restart-time'];
 }
 
+// Handle uploaded files
+$messages = [];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // Restore server.ini
+    if (isset($_FILES['upload_server']) && $_FILES['upload_server']['error'] === UPLOAD_ERR_OK) {
+        if (move_uploaded_file($_FILES['upload_server']['tmp_name'], $serverPath)) {
+            chmod($serverPath, 0644);
+            $messages[] = "server.ini restored successfully.";
+        } else {
+            $messages[] = "Failed to restore server.ini.";
+        }
+    }
+
+    // Restore channels.xml
+    if (isset($_FILES['upload_channels']) && $_FILES['upload_channels']['error'] === UPLOAD_ERR_OK) {
+        if (move_uploaded_file($_FILES['upload_channels']['tmp_name'], $channelsFile)) {
+            chmod($channelsFile, 0644);
+            $messages[] = "channels.xml restored successfully.";
+        } else {
+            $messages[] = "Failed to restore channels.xml.";
+        }
+    }
+
+    // Restore wfeeds.xml
+    if (isset($_FILES['upload_wfeeds']) && $_FILES['upload_wfeeds']['error'] === UPLOAD_ERR_OK) {
+        if (move_uploaded_file($_FILES['upload_wfeeds']['tmp_name'], $wfeedsPath)) {
+            chmod($wfeedsPath, 0644);
+            $messages[] = "wfeeds.xml restored successfully.";
+        } else {
+            $messages[] = "Failed to restore wfeeds.xml.";
+        }
+    }
+}
 ?>
-<?php
-$settingsFile = __DIR__ . "/includes/server.ini";
-$serverIni = parse_ini_file($settingsFile);
-$serverIP = $serverIni['serverIP'] ?? '127.0.0.1';
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,10 +59,13 @@ $serverIP = $serverIni['serverIP'] ?? '127.0.0.1';
     <title>Backup & Restore</title>
 </head>
 <body>
-<?php include "./includes/menu.php"; ?>
 <h2>Backup & Restore</h2>
 
-<?php if (!empty($message)) echo "<p style='color: green;'>$message</p>"; ?>
+<?php if (!empty($messages)): ?>
+    <?php foreach ($messages as $msg): ?>
+        <p style="color: green;"><?= htmlspecialchars($msg) ?></p>
+    <?php endforeach; ?>
+<?php endif; ?>
 
 <h3>Download Config Files</h3>
 <ul>

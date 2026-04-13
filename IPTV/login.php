@@ -1,14 +1,15 @@
 <?php
 session_start();
 $ini = parse_ini_file(__DIR__ . "/includes/server.ini", true);
-$auth = $ini['auth'];
+$auth = $ini['auth'] ?? [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $_POST['username'] ?? '';
     $pass = $_POST['password'] ?? '';
 
-    if ($user === $auth['username'] && password_verify($pass, $auth['password'])) {
+    if (isset($auth[$user]) && password_verify($pass, $auth[$user])) {
         $_SESSION['authenticated'] = true;
+        $_SESSION['username'] = $user;
         header("Location: index.php");
         exit;
     } else {

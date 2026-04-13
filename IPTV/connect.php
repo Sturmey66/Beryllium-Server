@@ -1,21 +1,25 @@
-<?php 
-include "./includes/auth.php"; // Session and login check
-require_once __DIR__ . "/includes/functions.php";
-?>
 <?php
-$channelsFile = __DIR__ . "/channels.xml";
-$feedsFile = __DIR__ . "/wfeeds.xml";
-$liveDir = "/LIVE/VOD";
-$announceFile = "/LIVE/announce/index.m3u8"; // announce stream
-$playlistFile = "/LIVE/service.m3u";
-$serverIni = parse_ini_file(__DIR__ . "/includes/server.ini");
-$serverIP = $serverIni['serverIP'] ?? '127.0.0.1';
+// Enable error reporting
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
+// Project base directory
+$BASE_DIR = "/IPTV";
 
-function sanitize($text) {
-    return htmlspecialchars(trim($text), ENT_QUOTES);
+// Include core files
+include $BASE_DIR . "/includes/menu.php";
+require_once $BASE_DIR . "/includes/init.php";
+
+$generated = false;
+
+// Helper function (if not already defined)
+if (!function_exists('sanitize')) {
+    function sanitize($str) {
+        return htmlspecialchars(trim($str), ENT_QUOTES);
+    }
 }
 
+// Handle playlist generation
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lines = ["#EXTM3U"];
 
@@ -23,45 +27,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (file_exists($channelsFile)) {
         $xml = simplexml_load_file($channelsFile);
         foreach ($xml->channel as $channel) {
+            $enabled = strtolower((string)$channel->enabled) === 'true';
+            if (!$enabled) continue; // skip disabled channels
+
             $name = sanitize((string)$channel->name);
-            // $url = sanitize((string)$channel->url);
-            $url = "http://$serverIP:8080/$name/index.m3u8";
-            $lines[] = "#EXTINF:-1,$name";
+            $logo = sanitize((string)$channel->{'tv-logo'});
+            $url  = "http://$serverIP:$serverPort/$name/index.m3u8";
+            $lines[] = "#EXTINF:-1 tvg-logo=\"$logo\",$name";
             $lines[] = $url;
         }
     }
 
-    // Insert announce stream if it exists
-    if (file_exists($announceFile)) {
+    // Add announce stream if index.m3u8 exists
+    $announceM3U8 = "/LIVE/announce/index.m3u8";
+    if (file_exists($announceM3U8)) {
         $lines[] = "#EXTINF:-1 tvg-logo=\"\" group-title=\"announce\",Announcements";
-        $lines[] = "http://$serverIP:8080/announce/index.m3u8";
+        $lines[] = "http://$serverIP:$serverPort/announce/index.m3u8";
     }
-    
+
     // Add wfeeds.xml
-    if (file_exists($feedsFile)) {
-        $xml = simplexml_load_file($feedsFile);
+    if (file_exists($wfeedsPath)) {
+        $xml = simplexml_load_file($wfeedsPath);
         foreach ($xml->feed as $feed) {
-            $logo = sanitize((string)$feed->{'tv-logo'});
+            $logo  = sanitize((string)$feed->{'tv-logo'});
             $group = sanitize((string)$feed->{'group-title'});
-            $name = sanitize((string)$feed->name);
-            $url = sanitize((string)$feed->url);
+            $name  = sanitize((string)$feed->name);
+            $url   = sanitize((string)$feed->url);
             $lines[] = "#EXTINF:-1 tvg-logo=\"$logo\" group-title=\"$group\",$name";
             $lines[] = $url;
         }
     }
 
-    // Add .mp4 files from live directory
-    if (is_dir($liveDir)) {
-        foreach (glob("$liveDir/*.mp4") as $file) {
+    // Add .mp4 files from $vodDir
+    if (is_dir($vodDir)) {
+        foreach (glob("$vodDir/*.mp4") as $file) {
             $filename = basename($file);
-            $name = pathinfo($filename, PATHINFO_FILENAME);
-            $url = "http://$serverIP:8080/VOD/$filename";
-            $lines[] = "#EXTINF:-1,$name";
-            $lines[] = $url;
+            $name     = pathinfo($filename, PATHINFO_FILENAME);
+            $url      = "http://$serverIP:$serverPort/VOD/$filename";
+            $lines[]  = "#EXTINF:-1,$name";
+            $lines[]  = $url;
         }
     }
 
-    // Write to file
+    // Ensure directory exists for playlist
+    @mkdir(dirname($playlistFile), 0777, true);
+
+    // Write playlist
     file_put_contents($playlistFile, implode("\n", $lines));
     $generated = true;
 }
@@ -74,16 +85,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Generate service.m3u</title>
 </head>
 <body>
-<?php include "./includes/menu.php"; ?>
 <h2>Generate Playlist</h2>
-  <p>Download or access it here: <a href="http://<?= $serverIP ?>:8080/service.m3u" target="_blank">http://<?= $serverIP ?>:8080/service.m3u</a></p>
+<p>Download or access it here: 
+    <a href="http://<?= $serverIP ?>:<?= $serverPort ?>/service.m3u" target="_blank">
+        http://<?= $serverIP ?>:<?= $serverPort ?>/service.m3u
+    </a>
+</p>
 
 <form method="post">
     <button type="submit">Generate updated service.m3u</button>
 </form>
 
-<?php if (!empty($generated)): ?>
-    <p><strong>Playlist generated successfully.</strong></p>
+<?php if ($generated): ?>
+<p><strong>Playlist generated successfully.</strong></p>
 <?php endif; ?>
 </body>
 </html>
