@@ -7,6 +7,9 @@ RUN apk add --no-cache dcron       # Alpine cron
 RUN adduser -S -G www-data www-data
 RUN rm /etc/nginx/http.d/default.conf
 
+# Set shortcuts so that the php commands work
+RUN ln -s /usr/bin/php83 /usr/bin/php
+
 # Set working directory
 WORKDIR /IPTV
 
@@ -44,6 +47,6 @@ CMD ["sh", "-c", "crond && supervisord -c /etc/supervisord.conf"]
 # Add crontab entry for restart-scheduler.php
 RUN echo "* * * * * php /IPTV/restart-scheduler.php >> /var/log/restart-scheduler.log 2>&1" >> /etc/crontabs/root
 RUN echo "* * * * * php /IPTV/includes/health-check.php >> /var/log/restart-scheduler.log 2>&1" >> /etc/crontabs/root
-
+RUN echo "* * * * * php /IPTV/includes/snapshot.php >> /var/log/snapshot.log 2>&1" >> /etc/crontabs/root
 
 
